@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clases.cpp                                         :+:      :+:    :+:   */
+/*   clases.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 12:58:25 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/19 12:58:58 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/19 13:11:43 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NOMBRE_CLASE_HPP
-#define NOMBRE_CLASE_HPP
+#include "NombreClase.hpp"
+#include <iostream>
 
-class NombreClase {
-public:
-    // Constructor
-    NombreClase();
+// Constructor
+NombreClase::NombreClase() {
+    // Código para inicializar atributos si hace falta
+}
 
-    // Destructor
-    ~NombreClase();
+// Destructor
+NombreClase::~NombreClase() {
+    // Código para liberar recursos si es necesario
+}
 
-    // Métodos públicos
-    void metodo1();
-    int metodo2() const;
+void NombreClase::metodo1() {
+    std::cout << "Método 1 llamado" << std::endl;
+}
 
-private:
-    // Atributos privados
-    int atributo1;
-    double atributo2;
-};
-
-#endif
+int NombreClase::metodo2() const {
+    return 42;  // Ejemplo
+}
 
