@@ -6,28 +6,57 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 12:58:25 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/19 13:11:43 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/19 16:46:03 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "NombreClase.hpp"
-#include <iostream>
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
-// Constructor
-NombreClase::NombreClase() {
-    // Código para inicializar atributos si hace falta
-}
+#include <string>
 
-// Destructor
-NombreClase::~NombreClase() {
-    // Código para liberar recursos si es necesario
-}
+class Contact {
+public:
+    // Constructor y destructor
+    Contact();
+    ~Contact();
 
-void NombreClase::metodo1() {
-    std::cout << "Método 1 llamado" << std::endl;
-}
+    // Métodos para poner datos (setters)
+    void setName(const std::string& name);
+    void setPhone(const std::string& phone);
 
-int NombreClase::metodo2() const {
-    return 42;  // Ejemplo
-}
+    // Métodos para obtener datos (getters)
+    std::string getName() const;
+    std::string getPhone() const;
+
+private:
+    std::string name;
+    std::string phone;
+};
+
+#endif
+
+
+#ifndef NOMBRE_CLASE_HPP
+#define NOMBRE_CLASE_HPP
+
+class NombreClase {
+public:
+    // Constructor
+    NombreClase();
+
+    // Destructor
+    ~NombreClase();
+
+    // Métodos públicos
+    void metodo1();
+    int metodo2() const;
+
+private:
+    // Atributos privados
+    int atributo1;
+    double atributo2;
+};
+
+#endif
 
