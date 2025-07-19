@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   ej02.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/11 12:13:59 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/19 12:07:50 by anamedin         ###   ########.fr       */
+/*   Created: 2025/07/11 13:29:31 by anamedin          #+#    #+#             */
+/*   Updated: 2025/07/11 13:47:55 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <iostream>
-#include <cctype>
 
-
-int	main( int argc, char **argv )
+int main()
 {
-	std::string	empty_args = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	int			j;
+  std::cout << "Introduuce un entero";
+  int x;
+  std::cin >> x;
+  std::cout << "Introduce otro entero: ";
+  int y;
+  std::cin >> y;
+  std::cout << "x=" << x << "\ny=" << y << '\n';
 
-	if ( argc == 1 )
-		std::cout << empty_args;
-	else
-	{
-		for ( int i = 1; i < argc; i++ )
-		{
-			j = 0;
-			while ( argv[i][j] )
-				std::cout << ( char )std::toupper( argv[i][j++] );
-		}
-	}
-	std::cout << std::endl;
-	return 0;
 }
+
+
+/*
+ *std::cout << "Introduce dos enteros: ";
+ int x, y;
+ std::cin >> x >> y;
+ std::cout << "x=" << x << "\ny=" << y << '\n';
+
+
+ * */

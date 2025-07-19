@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   clases.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/11 12:13:59 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/19 12:07:50 by anamedin         ###   ########.fr       */
+/*   Created: 2025/07/19 12:59:29 by anamedin          #+#    #+#             */
+/*   Updated: 2025/07/19 12:59:51 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "NombreClase.hpp"
 #include <iostream>
-#include <cctype>
 
-
-int	main( int argc, char **argv )
-{
-	std::string	empty_args = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	int			j;
-
-	if ( argc == 1 )
-		std::cout << empty_args;
-	else
-	{
-		for ( int i = 1; i < argc; i++ )
-		{
-			j = 0;
-			while ( argv[i][j] )
-				std::cout << ( char )std::toupper( argv[i][j++] );
-		}
-	}
-	std::cout << std::endl;
-	return 0;
+// Constructor
+NombreClase::NombreClase() {
+    // Código para inicializar atributos si hace falta
 }
+
+// Destructor
+NombreClase::~NombreClase() {
+    // Código para liberar recursos si es necesario
+}
+
+void NombreClase::metodo1() {
+    std::cout << "Método 1 llamado" << std::endl;
+}
+
+int NombreClase::metodo2() const {
+    return 42;  // Ejemplo
+}
+
