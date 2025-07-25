@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:01:01 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/19 15:58:16 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/25 13:45:24 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main(){
 
   //  declare object
-  Contact contact = new object();
+  PhoneBook  book(8);
 
   //  init object
   //contact = ;
