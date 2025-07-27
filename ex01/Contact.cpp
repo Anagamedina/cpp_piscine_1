@@ -6,13 +6,13 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 12:46:21 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/27 09:55:47 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/27 11:46:05 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 #include <iostream> 
-
+//
 //inicializando 
 //constructor 
 contact::contact(){
