@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 12:46:21 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/25 13:42:21 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/27 09:55:47 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ contact::~contact(){
   //codigo para liberar recusos si es necesario 
 }
 
-
+//
 /*-------setter' functions--------*/
 
 void Contact::set_name(std::string _name){
