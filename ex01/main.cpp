@@ -6,30 +6,53 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:01:01 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/25 13:45:24 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/29 19:23:13 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 #include <iostream>
 #include <limits>
 
 int main(){
 
   //  declare object
-  PhoneBook  book(8);
+  PhoneBook  phone_book;
+  std::string  input_user;
+  std::cout << "Welcome to my Phonebook :)" << std::endl;
 
-  //  init object
-  //contact = ;
+  while(1){
+	  //add search exit
+	std::cout << "Choose commands :) : ADD - SEARCH - EXIT...." << std::endl;
+	std::cout << "Enter command: ";
+	std::getline(std::cin, input_user);
+	if (std::cin.eof())
+	{
+		std::cout << "\nchaooo" << std::endl;
+		break ; 
+	}
+	if (input_user == "ADD")
+	{
+		phone_book.add();
 
-  contact.set_name("Ana");
-  contact.set_phone("123456");
-  std::cout << "Nombre: " << contact.get_name() << std::endl;
-  std::cout << "Telefono: " << contact.get_phone() << std::endl;
+	 }
+	  if (input_user == "SEARCH")
+	  {
+		  //setw
+		  std::getline(std::cin, input_user);
+		  std::cout << "Buscando..." << std::endl;
+		  //phone_book.search();
 
+	  }
 
-  //int valor = contact.metodo2();
-  return (0);
+	  if (input_user == "EXIT")
+	  {
+		  std::getline(std::cin, input_user);
+		  std::cout << "Good bye baby!..." << std::endl;
+
+	  }
+
+  }
+	return (0);
 }
-
-

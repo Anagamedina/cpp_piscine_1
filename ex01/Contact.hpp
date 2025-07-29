@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 12:46:28 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/25 13:40:47 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/27 11:51:17 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ class Contact{
     //_ al inicio atributos 
     std::string first_name;
     std::string phone_number;
-    std::string last_nane;
+    std::string last_name;
     std::string nickname;
     std::string darkest_secret;
 

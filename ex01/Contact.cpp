@@ -6,21 +6,21 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 12:46:21 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/27 11:46:05 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:55:20 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 #include <iostream> 
 //
 //inicializando 
 //constructor 
-contact::contact(){
+Contact::Contact(){
   //codigo para inicializar atributos si hace falta 
 }
 
 //destructor
-contact::~contact(){
+Contact::~Contact(){
   //codigo para liberar recusos si es necesario 
 }
 
@@ -37,10 +37,10 @@ void Contact::set_phone(std::string _phone){
 void Contact::set_last_name(std::string _last_name){
   this->last_name = _last_name;
 }
-void Contact::set_darkest_secret(std::string _secret){
+void Contact::set_secret(std::string _secret){
   this->darkest_secret = _secret;
 }
-void Contact::set_nickname(std::string _newname){
+void Contact::set_nickname(std::string _nickname){
   this->nickname = _nickname;
 }
 
@@ -60,6 +60,4 @@ void Contact::set_nickname(std::string _newname){
   std::string Contact::get_secret( void ){
     return this->darkest_secret;
   }
-}
-
 
