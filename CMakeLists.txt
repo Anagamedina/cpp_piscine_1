@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
 project(cpp_module_00)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 98)
 
 include_directories(ex00)
 include_directories(ex01)

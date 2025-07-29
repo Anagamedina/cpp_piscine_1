@@ -15,44 +15,46 @@
 #include <iostream>
 #include <limits>
 
-int main(){
+int main()
+{
+	//  declare object
+	PhoneBook phone_book;
+	std::string input_user;
+	std::cout << "Welcome to my Phonebook :)" << std::endl;
 
-  //  declare object
-  PhoneBook  phone_book;
-  std::string  input_user;
-  std::cout << "Welcome to my Phonebook :)" << std::endl;
-
-  while(1){
-	  //add search exit
-	std::cout << "Choose commands :) : ADD - SEARCH - EXIT...." << std::endl;
-	std::cout << "Enter command: ";
-	std::getline(std::cin, input_user);
-	if (std::cin.eof())
+	while (1)
 	{
-		std::cout << "\nchaooo" << std::endl;
-		break ; 
+		//add search exit
+		std::cout << "Choose commands :) : ADD - SEARCH - EXIT...." <<
+			std::endl;
+		std::cout << "Enter command: ";
+		std::getline(std::cin, input_user);
+		if (std::cin.eof())
+		{
+			std::cout << "\nchaooo" << std::endl;
+			break ;
+		}
+		if (input_user == "ADD")
+		{
+			phone_book.add();
+		}
+		if (input_user == "SEARCH")
+		{
+			//setw
+			std::getline(std::cin, input_user);
+			std::cout << "Buscando..." << std::endl;
+			//phone_book.search();
+		}
+
+		if (input_user == "EXIT")
+		{
+			std::getline(std::cin, input_user);
+			std::cout << "Good bye baby!..." << std::endl;
+		}
+		else
+		{
+			std::cout << "Error prueba otro coamndo :(" << std::endl;
+		}
 	}
-	if (input_user == "ADD")
-	{
-		phone_book.add();
-
-	 }
-	  if (input_user == "SEARCH")
-	  {
-		  //setw
-		  std::getline(std::cin, input_user);
-		  std::cout << "Buscando..." << std::endl;
-		  //phone_book.search();
-
-	  }
-
-	  if (input_user == "EXIT")
-	  {
-		  std::getline(std::cin, input_user);
-		  std::cout << "Good bye baby!..." << std::endl;
-
-	  }
-
-  }
 	return (0);
 }

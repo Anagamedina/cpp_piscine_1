@@ -25,6 +25,7 @@ class PhoneBook {
 	//metodos
 	void add();
 	void searchContact();
+	void exit();
 
   private:
     Contact _contacts[8];
