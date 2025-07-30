@@ -12,7 +12,7 @@
 
 
 #include <iostream>
-#include <iomanip> //TODO
+#include <iomanip> //para setw
 #include <limits>
 #include <string>
 #include <cstdlib> //TODO
@@ -25,8 +25,15 @@ PhoneBook::PhoneBook()
 	_max_size = 0;
 }
 
-PhoneBook::~PhoneBook()
-{
+
+void print_column(std::string str){
+	if (str.length() > 10)
+		std::cout << str.substr(0, 9) + "."; //truncar y añadir .
+	else
+		std::cout << std::setw(10) << str;
+}
+
+PhoneBook::~PhoneBook(){
 }
 
 void PhoneBook::add(void)
@@ -82,18 +89,46 @@ void PhoneBook::add(void)
 }
 
 
+//imprimir todos los contactos
+//---->>> void print() setw
+//----->>> truncar con (.)
+//pregnutar que indice quieres ver
+//comprobar que el indice exista y si no mensaje error
+//comprobar que el indice exista, entregar datos del contacto x
+
 void PhoneBook::searchContact(void)
 {
-	//imprimir todos los contactos 
-	//---->>> void print() setw 
-	//----->>> truncar con (.)
-	//pregnutar que indice quieres ver
-	//comprobar que el indice exista y si no mensaje error
-	//comprobar que el indice exista, entregar datos del contacto x
-}
+	size_t	max_index;
+
+	if (_index == 0)
+	{
+		std::cout << "Agenda vacia: Añade un contacto primero.\n";
+		return ;
+	}
+
+	if (_index == 8)
+		max_index = 8;
+	else
+		max_index = _index;
+
+	std::cout << std::setw(10) << "Index" << "|"
+				<< std::setw(10) << "Name" << "|"
+				<< std::setw(10) << "LastName" << "|"
+				<< std::setw(10) << "Nickname" << std::endl;
+
+	for (size_t i = 0; i < max_index; i++)
+	{
+		std::cout << std::setw(10) << i << "|";
+		print_column(_contacts[i].get_name());
+		std::cout << "|";
+		print_column(_contacts[i].get_last_name());
+		std::cout << "|";
+		print_column(_contacts[i].get_nickname());
+		std::cout << std::endl;
+	}
+	//pedir indice....
+
+	//Mostrar datos del contacto elegido
 
 
-void PhoneBook::exit(void)
-{
-	//exit print y un break
 }

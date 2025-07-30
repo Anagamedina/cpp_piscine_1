@@ -40,16 +40,13 @@ int main()
 		}
 		if (input_user == "SEARCH")
 		{
-			//setw
-			std::getline(std::cin, input_user);
-			std::cout << "Buscando..." << std::endl;
-			//phone_book.search();
+			phone_book.searchContact();
 		}
 
 		if (input_user == "EXIT")
 		{
-			std::getline(std::cin, input_user);
 			std::cout << "Good bye baby!..." << std::endl;
+			break ;
 		}
 		else
 		{
