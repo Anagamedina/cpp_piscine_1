@@ -3,23 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:01:01 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/29 19:23:13 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/30 13:51:29 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
 #include "PhoneBook.hpp"
-#include <iostream>
-#include <limits>
 
 int main()
 {
-	//  declare object
-	PhoneBook phone_book;
-	std::string input_user;
+
+	PhoneBook 		phone_book;
+	std::string 	input_user;
+	
 	std::cout << "Welcome to my Phonebook :)" << std::endl;
 
 	while (1)
@@ -31,26 +29,47 @@ int main()
 		std::getline(std::cin, input_user);
 		if (std::cin.eof())
 		{
-			std::cout << "\nchaooo" << std::endl;
+			std::cout << "\nGood bye..." << std::endl;
 			break ;
 		}
 		if (input_user == "ADD")
 		{
 			phone_book.add();
 		}
-		if (input_user == "SEARCH")
+		else if (input_user == "SEARCH")
 		{
-			phone_book.searchContact();
+			phone_book.print_table();
+
+			std::cout << "Select index: ";
+			std::string index_contact;
+			std::getline(std::cin, index_contact);
+
+			if (std::cin.eof())
+			{
+				std::cout << "\nGood bye..." << std::endl;
+				break;
+			}
+
+			if (!index_contact.empty())
+			{
+				int new_index = std::atoi(index_contact.c_str());
+				phone_book.searchContact(new_index);
+			}
+			else
+			{
+				std::cout << "Invalid index" << std::endl;
+			}
 		}
 
-		if (input_user == "EXIT")
+
+		else if (input_user == "EXIT")
 		{
-			std::cout << "Good bye baby!..." << std::endl;
+			std::cout << "Goodbye!..." << std::endl;
 			break ;
 		}
 		else
 		{
-			std::cout << "Error prueba otro coamndo :(" << std::endl;
+			std::cout << "Invalid command" << std::endl;
 		}
 	}
 	return (0);
