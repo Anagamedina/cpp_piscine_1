@@ -85,9 +85,6 @@ void PhoneBook::add(void)
 	this->_index++;
 }
 
-
-
-
 void PhoneBook::print_table(void)
 {
 	if (this->_index == 0)
