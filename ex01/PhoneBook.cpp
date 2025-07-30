@@ -97,13 +97,7 @@ void PhoneBook::print_table(void)
 			<< std::setw(10) << "LastName" << "|"
 			<< std::setw(10) << "Nickname" << "|" << std::endl;
 
-	int max_index;
-	if (this->_index == 8)
-		max_index = 8;
-	else
-		max_index = this->_index;
-
-	for (int  i = 0; i < max_index; i++)
+	for (int  i = 0; i < (int )this->_index; i++)
 	{
 		std::cout << "|" << std::setw(10) << i << "|";
 		print_columns(_contacts[i].get_name());
@@ -117,30 +111,22 @@ void PhoneBook::print_table(void)
 
 void PhoneBook::searchContact(int index)
 {
-	int 	max_index;
+	std::cout << "Add index of contact you want to see:\n";
 
-	if (this->_index == 0) //cambio this->
+	if (index < 0 || index >= (int) this->_max_size || std::isalpha(index) == 1)
 	{
-		std::cout << "Agenda vacia: Añade un contacto primero.\n";
+		std::cout << "Index out of range" << std::endl;
 		return ;
-	}
-	if (this->_index == 8)
-			max_index = 8;
-		else
-			max_index = this->_index;
-	
-		std::cout << "Add index of contact you want to see: ";
-		if (index < 0 || index >= max_index)
-		{
-			std::cout << "Index out of range\n";
-			return ;
-		}	
+	}	
 	//Mostrar datos del contacto elegido
+	if (index < (int )this->_index){
 	std::cout << std::setw(10) << "Name" << ": " << _contacts[index].get_name() << std::endl;
 	std::cout << std::setw(10) << "Last name" << ": " << _contacts[index].get_last_name() << std::endl;
 	std::cout << std::setw(10) << "Nickname" << ": " << _contacts[index].get_nickname() << std::endl;
 	std::cout << std::setw(10) << "Phone" << ": " << _contacts[index].get_phone() << std::endl;
-	std::cout << std::setw(10) << "Secret" << ": " << _contacts[index].get_secret() << std::endl;
+	std::cout << std::setw(10) << "Secret" << ": " << _contacts[index].get_secret() << std::endl;	
+	}
+	
 
 }
 

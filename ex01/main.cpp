@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:01:01 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/30 17:21:48 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/30 19:03:18 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,23 @@ int main()
 		}
 		else if (input_user == "SEARCH")
 		{
+			if (phone_book.getIndex() == 0) //cambio this->
+			{
+				std::cout << "Agenda vacia: Añade un contacto primero." << std::endl;
+				continue ;
+			}
 			phone_book.print_table();
-
+			
 			std::cout << "Select index: ";
 			std::string index_contact;
 			std::getline(std::cin, index_contact);
-
+			
 			if (std::cin.eof())
 			{
 				std::cout << "\nGood bye..." << std::endl;
 				break;
 			}
-
-			if (!index_contact.empty())
+			if (!index_contact.empty() && std::isdigit(index_contact[0]))
 			{
 				int new_index = std::atoi(index_contact.c_str());
 				phone_book.searchContact(new_index);
@@ -60,8 +64,6 @@ int main()
 				std::cout << "Invalid index" << std::endl;
 			}
 		}
-
-
 		else if (input_user == "EXIT")
 		{
 			std::cout << "Goodbye!..." << std::endl;
