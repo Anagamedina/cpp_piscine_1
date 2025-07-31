@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:06:37 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/31 10:20:56 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:07:35 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Zombie
 {
   private:
-	std::string _name:
+	std::string _name;
 
   public:
 	  Zombie(std::string name);
@@ -33,7 +33,7 @@ Zombie* newZombie(std::string name);
   //puedas usarlo fuera del alcance de la funcion
 
 
-void ramdomChump(std::string name);
+void randomChump(std::string name);
   //esta funcion crea un zombie le asigna un nombre y hace que se anuncie 
   //indmediatamente 
 
