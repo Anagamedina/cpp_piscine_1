@@ -6,7 +6,7 @@
 #    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 13:26:30 by anamedin          #+#    #+#              #
-#    Updated: 2025/07/31 15:03:52 by anamedin         ###   ########.fr        #
+#    Updated: 2025/07/31 15:47:18 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = hordeofZombies
 
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
 HDR = Zombie.hpp
 
 OBJS = $(SRCS:.cpp=.o)

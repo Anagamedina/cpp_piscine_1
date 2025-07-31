@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 14:11:20 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/31 14:45:47 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/07/31 15:44:36 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 
 Zombie *zombieHorde(int N, std::string name)
 {
-	Zombie *zombiPtr = new Zombi[N];
+	Zombie *zombiPtr = new Zombie[N];
 
 	for (int i = 0; i < N; i++)
 	{
-		z[i].setName(name);
+		zombiPtr[i].setName(name);
 	}
 	//es dinamico puedo devolverlo para usarlo despues 
-	return (z);
+	return (zombiPtr);
 	
 }
