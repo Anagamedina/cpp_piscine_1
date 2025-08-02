@@ -6,13 +6,13 @@
 #    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 17:46:06 by anamedin          #+#    #+#              #
-#    Updated: 2025/07/31 17:47:05 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/02 13:43:33 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98  #-fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98  -fsanitize=address
 
 NAME = attack
 

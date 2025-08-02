@@ -6,27 +6,48 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:47:16 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/31 17:56:30 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/02 13:07:32 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include "Weapon.hpp"
+#include <iostream>
 
-# include <iostream>
-# include <string>
-
-class Weapon
+//contructor 
+//implementas lo que realmente hace ese constructor
+Weapon::Weapon(std::string type)
 {
-  private:
-	std::string _type;
+  //inicializar sus atributos privados
+  setType(type);
+std::cout << "***Contructor Weapon ***" << _type << "called:   " << std::endl;
 
-  public:
-	Weapon(std::string type);
-	~Weapon();
+}
 
-	const std::string getType(); // member function that returns a constant reference to type
-	void setType(std::string type); //member function that set type using the new value a parameter
-};
+//destructor 
 
-#endif
+Weapon::~Weapon()
+{
+  std::cout << "***Destructor Weapon ***" << _type << "called:   " << std::endl;
+
+}
+
+
+//metodos
+//getter del tipo de arma 
+
+const std::string& Weapon::getType() const
+{
+  return _type;
+
+}
+
+
+//setter del tipo de arma 
+void Weapon::setType(std::string type)
+{
+ _type = type;
+
+}
+
+
+
