@@ -6,12 +6,12 @@
 #    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 13:26:30 by anamedin          #+#    #+#              #
-#    Updated: 2025/07/31 15:47:18 by anamedin         ###   ########.fr        #
+#    Updated: 2025/07/31 15:50:16 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 NAME = hordeofZombies
 
