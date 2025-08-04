@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:05:25 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/04 14:01:01 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/04 17:18:32 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,5 @@ class Harl
     ~Harl();
     void  complain(std::string level );
 
-}
-
-
-#endif;
+};
+#endif
