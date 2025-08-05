@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:51:56 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/05 12:16:23 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:57:03 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ Fixed::Fixed(const Fixed &other){
 //operator= devuelve una referencia al objeto asignado
 ////clase &referencia aun objeto tipo (fixed)
 Fixed &Fixed::operator=(const Fixed &other){
-
+  std::cout << "Copy assigment operator called " << std::endl;
+  if (this != &other)
+    this->_fixedPointedValue = other.getRawBits();
+  return *this;
 
 }
 
@@ -62,12 +65,13 @@ Fixed::~Fixed(){
 
 //getter
 int getRawBits(void) const {
-  std::cout << " " << std::endl;
+  std::cout << "getRawBits member function called " << std::endl;
   return (this->_fixedPointedValue);
 }
 
 void setRawBits(int const raw){
-  std::cout
+  std::cout << "setRawBits member function called" << std::endl;
+  this->_fixedPointedValue = raw;
 }
 
 
