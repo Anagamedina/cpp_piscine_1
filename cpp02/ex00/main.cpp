@@ -6,27 +6,17 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 08:23:57 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/05 11:19:34 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/06 11:50:14 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
+/*
+- Se crean automáticamente
 
-/*crear una clase que tenga las cuatro funciones canónicas de C++*/
-/*En C++, la notación de punto fijo se utiliza para representar números
- * decimales con una cantidad fija de dígitos a la derecha del punto decimal.
- * Esto se logra utilizando tipos de datos como float o double y controlando 
- * la salida con funciones como setprecision y fixed de la biblioteca <iomanip>>. */
+- Se copian usando el constructor de copia y el operador =
 
-/*#include <iostream>
-#include <iomanip>
-
-int main() {
-    double num = 3.1415926535;
-    std::cout << std::fixed << std::setprecision(4) << num << std::endl; // Salida: 3.1416
-    return 0;
-}*/
+- Y se destruyen automáticamente al final del main() */
 
 int main(){
 
