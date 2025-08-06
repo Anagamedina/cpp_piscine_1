@@ -2,4 +2,4 @@
 
 ## Diagrama UML
 
-![Diagrama UML](./assets/diagrama.png)
+![Diagrama UML](./assets/Phonebook.drawio)
