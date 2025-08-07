@@ -1,17 +1,33 @@
-# 📘 C++ Module 01 – 42 Barcelona
+### 📦 ex00 – First contact with C++
 
-Este repositorio contiene mis ejercicios y apuntes personales del **módulo 01 de C++** de la piscina en [42 Barcelona](https://42barcelona.com/).
+#### 🎯 Objetivo:
+- Familiarizarse con el entorno C++ básico y la compilación con `clang++`.
+- Escribir el clásico programa `Hello World!`.
 
-Aquí encontrarás:
-- Diagramas UML para visualizar la estructura de clases.
-- Explicaciones teóricas por ejercicio.
-- Buenas prácticas y tips clave.
+#### 🧠 Conceptos clave:
+- Uso de `std::cout` y `std::endl`.
+- Compilación y ejecución de programas simples.
+- Introducción a las buenas prácticas en C++.
 
 ---
 
-## 📌 Diagrama general del proyecto
+### 📦 ex01 – Phonebook
+
+#### 🎯 Objetivo:
+- Implementar una agenda telefónica básica en C++.
+- Manejar la entrada del usuario y almacenar contactos.
+
+#### 🧠 Conceptos clave:
+- Uso de clases para representar un contacto.
+- Gestión de arrays estáticos o dinámicos de objetos.
+- Métodos para añadir, buscar y mostrar contactos.
+- Validación y control de entradas del usuario.
 
 ![Diagrama UML](./assets/Phonebook-Page-1.drawio.png)
+
+---
+
+## 📦 cpp01 – Módulo avanzado
 
 ---
 
@@ -123,36 +139,9 @@ Aquí encontrarás:
 - Filtrado de los niveles usando un array de strings y un índice de comparación.
 - El nivel introducido por el usuario determina a partir de qué quejas se imprimen.
 
-### ✔️ Buenas prácticas:
-- Manejar niveles desconocidos con un mensaje por defecto.
-- Mantener una estructura clara y escalable por si se añaden más niveles.
 
 ---
 
-## 🧠 Conclusión general del módulo
-
-Este módulo refuerza conceptos fundamentales de C++:
-
-- 📍 Diferencias entre stack y heap
-- 🔁 Gestión de memoria manual
-- 🧷 Punteros vs referencias
-- 🧩 Composición de clases
-- 🛠️ Constructores, destructores y const correctness
-
----
-
-## 🖋️ Créditos
-
-> 📍 Proyecto realizado durante la piscina de C++ en [42 Barcelona](https://42barcelona.com/)  
-> 👩‍💻 Autora: **Ana Medina**  
-> 🌊 Piscinera de 42  
-> 📅 Año: 2025
-
----
-
-## 🧭 Marca de agua (opcional)
-
-> `Ana Medina @ 42 Barcelona`  
 > `Made with 💙 at 42BCN`  
 > `© Ana Medina – 42 Barcelona`
 
