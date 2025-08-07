@@ -2,4 +2,4 @@
 
 ## Diagrama UML
 
-![Diagrama UML](./assets/Human.png)
+![Diagrama UML](./assets/Human.drawio.png)
