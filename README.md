@@ -19,6 +19,7 @@
 
 ## 📦 ex01 – Zombie class
 
+
 ### Objetivo:
 - Practicar el uso de clases, memoria dinámica y funciones miembro.
 
@@ -30,7 +31,7 @@
 ### Buenas prácticas:
 - Si usas `new`, asegúrate de usar `delete`.
 - El destructor debe anunciar la destrucción del objeto (para seguimiento).
-
+![Diagrama UML](./assets/ZombieHorde.drawio.png)
 ---
 
 ## 📦 ex02 – HumanA vs HumanB y Weapon
@@ -53,10 +54,10 @@
 - Una referencia es más segura si el objeto siempre debe tener un arma.
 - Un puntero es más flexible, pero requiere comprobaciones (`nullptr`).
 - Este ejercicio demuestra **diferencias de diseño en composición de clases**.
-
+![Diagrama UML](./assets/Human.drawio.png)
 ---
 
-## 📦 ex03 – ![Diagrama UML](./assets/Human.drawio.png)
+## 📦 ex03 – 
 
 *(Este puede variar según la versión del módulo. Puede ser revisar const correctness, copiar objetos, etc.)*
 
