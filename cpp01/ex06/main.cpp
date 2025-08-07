@@ -6,26 +6,13 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:04:01 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/07 16:39:09 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/07 16:47:39 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void)
-{
-  Harl objHarl;
-  
-  objHarl.complain("DEBUG");
-  objHarl.complain("INFO");
-  objHarl.complain("WARNING");
-  objHarl.complain("ERROR");
-  objHarl.complain("RANDOM");
-
-  return (0);
-}
-
-/*int main(int argc, char *argv[]){
+int main(int argc, char *argv[]){
   
   Harl  objHarl;
   
@@ -40,4 +27,4 @@ int main(void)
 
 
   return (0);
-}*/
+}
