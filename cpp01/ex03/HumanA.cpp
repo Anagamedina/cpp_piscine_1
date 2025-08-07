@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 11:54:51 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/02 12:15:40 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/07 10:10:13 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon& w) : _name(name), _weaponA(w)
+HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weaponA(weapon)
 {
   std::cout << "***Contructor HumanA ***" << _name << "****:  " << std::endl;
 }
