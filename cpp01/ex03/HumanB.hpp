@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 12:40:26 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/02 13:24:47 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/07 10:02:38 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class HumanB
     ~HumanB();
 
     void  attack();
-    void  setWeapon(Weapon&, std::string);
+    void  setWeapon(Weapon& newWeapone); //<-- se guarda la dirección (&weapon)
 
 };
 

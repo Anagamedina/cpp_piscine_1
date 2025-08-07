@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 13:17:42 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/02 18:33:01 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/07 10:02:05 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main(){
   {
     std::cout << "***** HumanA ***** " << std::endl;
-    Weapon club = Weapon("crude spiked club");
+    Weapon club = Weapon("crude spiked club"); // vida automática (stack).
     HumanA bob("Bob", club);
     bob.attack();
     club.setType("some other type of club");
@@ -33,7 +33,7 @@ int main(){
     Weapon club = Weapon("crude spike club");
     HumanB jim("Jim");
     jim.attack();
-    jim.setWeapon(club, "crude spiked club");
+    jim.setWeapon(club);
     jim.attack();
     club.setType("some other of club");
     jim.attack();

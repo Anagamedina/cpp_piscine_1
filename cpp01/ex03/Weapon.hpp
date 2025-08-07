@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 10:45:24 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/02 12:55:19 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/07 08:43:04 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ class Weapon
 	std::string _type;
 
   public:
-	//Esta clase tiene un constructor que recibe un string
-	//declaración del constructor y destructor 
+  
 	Weapon(std::string type);
 	~Weapon();
 
