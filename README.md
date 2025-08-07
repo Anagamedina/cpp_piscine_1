@@ -131,7 +131,7 @@ Incluye los módulos:
 ---
 
 ### 📦 ex05 – Harl complains
-
+![Diagrama UML](./assets/harl1.drawio.png)
 #### 🎯 Objetivo:
 - Crear una clase `Harl` que tenga diferentes niveles de queja (`DEBUG`, `INFO`, `WARNING`, `ERROR`) y ejecute una función distinta para cada nivel.
 
@@ -147,6 +147,7 @@ Incluye los módulos:
 ---
 
 ### 📦 ex06 – Harl filter (opcional)
+
 
 #### 🎯 Objetivo:
 - Filtrar las quejas de `Harl` según un nivel dado, imprimiendo solo desde ese nivel hacia arriba.
