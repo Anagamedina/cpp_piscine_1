@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:51:56 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/06 11:41:31 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/09 09:12:01 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //***************contructor por defecto **********/
 Fixed::Fixed(){
-  std::cout << "Default contructor called" << std::endl;
+  std::cout << "Constructor fail" << std::endl;
   this->_fixedPointedValue = 0;
 }
 
@@ -23,7 +23,9 @@ Fixed::Fixed() : _fixedPointedValue(0){
   std::cout << "Constructor fail" << std::endl;
 } 
 */
-
+//other sea otra instancia distinta de la actual sigue 
+//siendo un objeto de tipo Fixed y por eso puedes leer/escribir 
+//sus atributos privados 
 //***************Contructor de copia***************/
 Fixed::Fixed(const Fixed &other){
   std::cout << "Copy constructor called " << std::endl;
@@ -34,12 +36,13 @@ Fixed::Fixed(const Fixed &other){
 
 //Fixed & → Devuelves una referencia a ti mismo (*this)
 //Fixed & → Tipo de retorno: referencia al objeto actual
-
+//Esta función devuelve una referencia al objeto actual
+//Devuelve un alias al mismo objeto que está ejecutando la función
 Fixed &Fixed::operator=(const Fixed &other){
   std::cout << "Copy assigment operator called " << std::endl;
   if (this != &other) //evita que sea el mismo 
     this->_fixedPointedValue = other.getRawBits();
-  return *this; //devuelve el obj actual 
+  return *this; //devuelve el obj actual por referencia
   
   //_fixedPointedValue =  other.getRawBits();
   //setRawBits(other.getRawBits());
