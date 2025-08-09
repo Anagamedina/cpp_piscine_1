@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 12:07:33 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/09 17:32:14 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/09 18:43:26 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,9 @@ class Fixed{
   public:
 
     Fixed();
-    Fixed(const int num);
-    Fixed(const float num);
     Fixed(const Fixed& other);
-    ~Fixed();
-
     Fixed &operator=(const Fixed& other);
+    ~Fixed();
     
 
     //metodos
