@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:11:09 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/06 11:15:54 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/09 12:04:06 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Fixed{
   private:
     
     int               _fixedPointedValue;
-    static const int  _fractionalbits = 8;
+    static const int  _fractionalbits = 8; //8 bits 
 
   public:
     Fixed();
