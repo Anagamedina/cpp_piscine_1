@@ -6,6 +6,7 @@ Incluye los módulos:
 
 - `cpp00` – Conceptos básicos y Phonebook  
 - `cpp01` – Punteros, clases y composición
+- `cpp02` – Sobrecarga del operador 
 
 ---
 
@@ -148,14 +149,62 @@ Incluye los módulos:
 
 ### 📦 ex06 – Harl filter (opcional)
 
+---
+
+## 📦 cpp02 – Módulo avanzado 2
+
+### 📦 ex00 – Clase Fixed
 
 #### 🎯 Objetivo:
-- Filtrar las quejas de `Harl` según un nivel dado, imprimiendo solo desde ese nivel hacia arriba.
+- Practicar el uso de clases en C++ con atributos privados y públicos.
+- Implementar constructores (por defecto, copia), destructor, operador de asignación y métodos miembro.
+- Entender conceptos de encapsulación y manejo de datos privados.
 
 #### 🧠 Conceptos clave:
-- Implementar un sistema de **prioridades** de logging.
-- Filtrado de los niveles usando un array de strings y un índice de comparación.
-- El nivel introducido por el usuario determina a partir de qué quejas se imprimen.
+- Declaración e implementación de constructores y destructor.
+- Sobrecarga del operador de asignación (`operator=`).
+- Métodos getters y setters para acceder a datos privados.
+- Uso de variables miembro privadas para mantener estado interno.
+![Diagrama UML](./assets/Fixed.drawio.png)
+---
+
+### 📦 ex01 – Implementación de operadores y métodos adicionales
+
+#### 🎯 Objetivo:
+- Completar la clase `Fixed` con operadores y funciones para manipular datos.
+- Implementar métodos como `toFloat()`, `toInt()`, y sobrecargar operadores de comparación y aritméticos.
+
+#### 🧠 Conceptos clave:
+- Sobrecarga de operadores en C++.
+- Conversión entre tipos (`float`, `int`) y la clase propia.
+- Mejorar la interfaz de la clase para un uso más intuitivo.
+
+---
+
+### 📦 ex02 – Operadores de incremento/decremento y funciones estáticas
+
+#### 🎯 Objetivo:
+- Implementar operadores de incremento y decremento en la clase `Fixed`.
+- Añadir funciones estáticas como `min()` y `max()` para comparar objetos.
+
+#### 🧠 Conceptos clave:
+- Operadores sobrecargados para pre y post incremento/decremento.
+- Funciones estáticas que actúan sobre objetos sin necesidad de instancia.
+- Uso correcto de referencias y constantes para eficiencia y seguridad.
+
+---
+
+### 📦 ex03 – Pruebas y uso de la clase Fixed
+
+#### 🎯 Objetivo:
+- Crear programas de prueba para validar todas las funcionalidades implementadas en la clase `Fixed`.
+- Comprender la importancia de las pruebas unitarias para asegurar la calidad del código.
+
+#### 🧠 Conceptos clave:
+- Escritura de programas que crean objetos, usan operadores y métodos.
+- Observación y comparación de resultados esperados y reales.
+- Corrección de errores y mejora iterativa del código.
+
 
 ---
 
