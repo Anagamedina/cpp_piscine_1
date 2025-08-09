@@ -178,7 +178,7 @@ Incluye los módulos:
 - Sobrecarga de operadores en C++.
 - Conversión entre tipos (`float`, `int`) y la clase propia.
 - Mejorar la interfaz de la clase para un uso más intuitivo.
-
+![Diagrama UML](./assets/fixedex01.drawio.png)
 ---
 
 ### 📦 ex02 – Operadores de incremento/decremento y funciones estáticas
