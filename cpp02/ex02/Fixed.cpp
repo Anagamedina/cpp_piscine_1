@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 12:50:31 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/09 13:33:12 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/11 11:06:17 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ Fixed::Fixed() : _fixedPointedValue(0)
     std::cout << "Default constructor called" << std::endl;
 }
 
+
+//Int contructor 
 Fixed::Fixed(const int num)
 {
     std::cout << "Int constructor called" << std::endl;
@@ -30,6 +32,7 @@ Fixed::Fixed(const float num)
     //static_cast<int>(num * (1 << this->_fractionalbits));
 }
 
+//copy constructor 
 Fixed::Fixed(const Fixed& other)
 {
     std::cout << "Copy constructor called" << std::endl;
@@ -42,11 +45,14 @@ Fixed &Fixed::operator=(const Fixed& other)
     return (*this);
 } 
 
+//destructor 
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
 }
 
+
+//metodos 
 int Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called" << std::endl;
@@ -59,16 +65,100 @@ void Fixed::setRawBits(int const raw)
     this->_fixedPointedValue = raw;
 }
 
-// Convierte el valor almacenado a float dividiendo por 2^8
+
+//member fucntions 
 float Fixed::toFloat(void) const {
     return static_cast<float>(_fixedPointedValue) / (1 << _fractionalbits);
 }
 
-// Convierte el valor almacenado a int desplazando 8 bits a la derecha
 int Fixed::toInt(void) const {
     return _fixedPointedValue >> _fractionalbits;
 }
 
+
+//overload comparison operators
+
+bool Fixed::operator>(conts Fixed& fixed) const { 
+    return this->_fixedPointedValue > fixed.getRawBits();
+}
+
+bool Fixed::operator>(conts Fixed& fixed) const { 
+    return this->_fixedPointedValue < fixed.getRawBits();
+}
+
+bool Fixed::operator>(conts Fixed& fixed) const { 
+    return this->_fixedPointedValue >= fixed.getRawBits();
+}
+
+bool Fixed::operator>(conts Fixed& fixed) const { 
+    return this->_fixedPointedValue <= fixed.getRawBits();
+}
+
+bool Fixed::operator>(conts Fixed& fixed) const { 
+    return this->_fixedPointedValue == fixed.getRawBits();
+}
+
+bool Fixed::operator>(conts Fixed& fixed) const { 
+    return this->_fixedPointedValue != fixed.getRawBits();
+}
+
+//overload arithmetic operator 
+
+Fixed Fixed::operator+(const Fixed& fixed) const{
+    return Fixed(this->toFloat() + fixed.toFloat());
+}
+
+
+Fixed Fixed::operator-(const Fixed& fixed) const{
+
+}
+
+
+Fixed Fixed::operator*(const Fixed& fixed) const{
+
+}
+
+Fixed Fixed::operator/(const Fixed& fixed) const{
+
+}
+
+//overload increment/decrement operators
+
+
+Fixed& Fixed::operator++(){
+
+}
+
+Fixed Fixed::operator++(int){
+}
+
+
+Fixed& Fixed::operator--(){
+}
+
+
+Fixed Fixed::operator--(int){
+
+
+}
+
+//overload member functions max/min
+
+Fixed& Fixed::min(Fixed& fixed1, Fixed& fixed2){
+
+}
+
+const Fixed& Fixed::min(const Fixed& fixed1, const Fixed& fixed2){
+}
+
+
+Fixed& Fixed::max(Fixed& fixed1, Fixed& fixed2){
+}
+
+
+
+const Fixed& Fixed::max(const Fixed& fixed1, const Fixed& fixed2){
+}
 // Sobrecarga del operador << para imprimir el valor en float
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
     out << fixed.toFloat();
