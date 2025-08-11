@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 12:50:31 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/11 11:06:17 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:07:12 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,27 +78,27 @@ int Fixed::toInt(void) const {
 
 //overload comparison operators
 
-bool Fixed::operator>(conts Fixed& fixed) const { 
+bool Fixed::operator>(const Fixed& fixed) const { 
     return this->_fixedPointedValue > fixed.getRawBits();
 }
 
-bool Fixed::operator>(conts Fixed& fixed) const { 
+bool Fixed::operator<(const Fixed& fixed) const { 
     return this->_fixedPointedValue < fixed.getRawBits();
 }
 
-bool Fixed::operator>(conts Fixed& fixed) const { 
+bool Fixed::operator>=(const Fixed& fixed) const { 
     return this->_fixedPointedValue >= fixed.getRawBits();
 }
 
-bool Fixed::operator>(conts Fixed& fixed) const { 
+bool Fixed::operator<=(const Fixed& fixed) const { 
     return this->_fixedPointedValue <= fixed.getRawBits();
 }
 
-bool Fixed::operator>(conts Fixed& fixed) const { 
+bool Fixed::operator==(const Fixed& fixed) const { 
     return this->_fixedPointedValue == fixed.getRawBits();
 }
 
-bool Fixed::operator>(conts Fixed& fixed) const { 
+bool Fixed::operator!=(const Fixed& fixed) const { 
     return this->_fixedPointedValue != fixed.getRawBits();
 }
 
@@ -110,55 +110,75 @@ Fixed Fixed::operator+(const Fixed& fixed) const{
 
 
 Fixed Fixed::operator-(const Fixed& fixed) const{
-
+    return Fixed(this->toFloat() - fixed.toFloat());
 }
 
 
 Fixed Fixed::operator*(const Fixed& fixed) const{
-
+    return Fixed(this->toFloat() * fixed.toFloat());
 }
 
 Fixed Fixed::operator/(const Fixed& fixed) const{
-
+    return Fixed(this->toFloat() / fixed.toFloat());
 }
 
 //overload increment/decrement operators
 
 
 Fixed& Fixed::operator++(){
-
+    ++this->_fixedPointedValue;
+    return *this;
 }
 
 Fixed Fixed::operator++(int){
+    Fixed tmp = *this;
+    ++*this;
+    return tmp;
 }
 
 
 Fixed& Fixed::operator--(){
+    --this->_fixedPointedValue;
+    return *this;
 }
 
 
 Fixed Fixed::operator--(int){
-
+    Fixed tmp = *this;
+    --*this;
+    return tmp;
 
 }
 
 //overload member functions max/min
 
 Fixed& Fixed::min(Fixed& fixed1, Fixed& fixed2){
-
+    if (fixed1 < fixed2)
+        return fixed1;
+    return fixed2;
 }
 
 const Fixed& Fixed::min(const Fixed& fixed1, const Fixed& fixed2){
+    if (fixed1 < fixed2)
+        return fixed1;
+    return fixed2;
 }
 
 
 Fixed& Fixed::max(Fixed& fixed1, Fixed& fixed2){
+    if (fixed1 > fixed2)
+        return fixed1;
+    return fixed2;
 }
 
 
 
 const Fixed& Fixed::max(const Fixed& fixed1, const Fixed& fixed2){
+    if (fixed1 > fixed2)
+        return fixed1;
+    return fixed2;
 }
+
 // Sobrecarga del operador << para imprimir el valor en float
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
     out << fixed.toFloat();

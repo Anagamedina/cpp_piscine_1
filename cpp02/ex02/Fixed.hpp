@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 12:07:33 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/11 10:16:43 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:00:47 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,12 @@ class Fixed{
     Fixed operator--(int);
 
 
+//overload member functions max/min
 
-
-
+  static Fixed &min(Fixed &fixed1, Fixed &fixed2);
+  static const Fixed &min(const Fixed &fixed1, const Fixed &fixed2);
+  static Fixed &max(Fixed &fixed1, Fixed &fixed2);
+  static const Fixed &max(const Fixed &fixed1, const Fixed &fixed2);
 
 };
 
