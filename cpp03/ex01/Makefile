@@ -6,7 +6,7 @@
 #    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/11 15:52:53 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/12 10:52:56 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/12 12:11:26 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98  #-fsanitize=address
 
 DEPFLAGS = -MMD -MP
 
-SRCS = main.cpp ClapTrap.cpp ScacTrap.cpp
+SRCS= main.cpp ClapTrap.cpp ScavTrap.cpp
+
 
 HDR = ClapTrap.hpp ScavTrap.hpp
 
