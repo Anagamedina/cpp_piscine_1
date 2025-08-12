@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 12:36:47 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/12 14:40:04 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/12 14:56:42 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@ class FragTrap : public ClapTrap{
 		FragTrap(const FragTrap& copy);
 
 		FragTrap& operator=(const FragTrap& other);
-
-		void attack(const std::string& target);
-		//void takeDamage(unsigned int amount);
-		//void beRepaired(unsigned int amount);
-
 		void highFiveGuys(void);
 
 };

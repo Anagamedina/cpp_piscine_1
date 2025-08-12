@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 13:42:17 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/12 13:33:53 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/12 14:46:42 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@
 
 class ClapTrap {
 	
-  protected:
+  //protected:
+  private:
 	std::string		_name;
 	unsigned int	_hitPoints;
 	unsigned int	_energyPoints;
