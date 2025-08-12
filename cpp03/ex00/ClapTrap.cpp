@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 13:55:19 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/11 16:38:00 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/12 13:29:45 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other){
 	return *this;
 }
 
-
 //getters
 
 std::string ClapTrap::getName(void) const{
@@ -60,7 +59,31 @@ unsigned int ClapTrap::getDamagePoints(void) const{
 	return _attackDamage;
 }
 
+//setters
+ void ClapTrap::setName(const std::string& name) {
+		_name = name;
+ }
 
+ void ClapTrap::setHitPoints(int hp) {
+		if (hp < 0)
+			_hitPoints = 0;
+		else
+			_hitPoints = hp;
+ }
+
+ void ClapTrap::setEnergyPoints(int ep) {
+		if (ep < 0)
+			_energyPoints = 0;
+		else
+			_energyPoints = ep;
+ }
+
+ void 	ClapTrap::setAttackDamage(int ad) {
+		if (ad < 0)
+			_attackDamage = 0;
+		else
+			_attackDamage = ad;
+ }
 
 //metodos
 void ClapTrap::attack(const std::string& target){
@@ -97,7 +120,7 @@ void ClapTrap::beRepaired(unsigned int amount){
 void ClapTrap::printStatus(void) const{
 
     std::cout << RED << "*****************************************" << YEL << std::endl;
-	std::cout << "Name: " << _name << std::endl;
+	std::cout << "Name: "<< _name << std::endl;
 	std::cout << "Hit Points: " << _hitPoints << std::endl;
 	std::cout << "Energy Points: " << _energyPoints << std::endl;
 	std::cout << "Attack Damage: " << _attackDamage << std::endl;

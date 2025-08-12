@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 10:17:18 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/12 11:04:38 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/12 15:38:45 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 //default contructor 
 ScavTrap::ScavTrap() : ClapTrap("default"){
-	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
-	std::cout << "ScavTrap default constructor called for " << _name << std::endl;
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAttackDamage(20);
+
+	std::cout << "ScavTrap default constructor called for " << getName() << std::endl;
 }
 
 
 //constructor overload
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name){
-	_hitPoints = 100;
-	_energyPoints =  50;
-	_attackDamage = 20;
-	std::cout << "ScavTrap overload contructor called for" << _name << std::endl;
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAttackDamage(20);
+	std::cout << "ScavTrap overload contructor called for" << getName() << std::endl;
 }
 
 //copy contructor 
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other){
-	std::cout << "ScavTRap copy constructor called for " << _name << std::endl;
-	_hitPoints = other._hitPoints;
-	_energyPoints = other._energyPoints;
-	_attackDamage = other._attackDamage;
+	std::cout << "ScavTRap copy constructor called for " << getName() << std::endl;
+		
 }
 
 

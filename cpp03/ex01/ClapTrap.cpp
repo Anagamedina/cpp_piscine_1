@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 13:55:19 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/12 10:44:06 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/12 13:32:51 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,32 @@ unsigned int ClapTrap::getEnergyPoints(void) const{
 unsigned int ClapTrap::getDamagePoints(void) const{
 	return _attackDamage;
 }
+
+//setters
+ void ClapTrap::setName(const std::string& name) {
+		_name = name;
+ }
+
+ void ClapTrap::setHitPoints(int hp) {
+		if (hp < 0)
+			_hitPoints = 0;
+		else
+			_hitPoints = hp;
+ }
+
+ void ClapTrap::setEnergyPoints(int ep) {
+		if (ep < 0)
+			_energyPoints = 0;
+		else
+			_energyPoints = ep;
+ }
+
+ void 	ClapTrap::setAttackDamage(int ad) {
+		if (ad < 0)
+			_attackDamage = 0;
+		else
+			_attackDamage = ad;
+ }
 
 
 
