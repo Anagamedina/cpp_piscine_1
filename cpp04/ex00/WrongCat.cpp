@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 14:53:56 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/13 14:59:02 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/13 16:10:54 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ WrongCat::~WrongCat(){
   std::cout << "WrongCat..." << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& other) : Animal(other){
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other){
   std::cout << " cat copy" << _type << std::endl;
 }
 
