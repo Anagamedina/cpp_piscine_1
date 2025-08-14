@@ -6,7 +6,7 @@
 #    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/13 08:32:39 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/13 12:34:28 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/14 09:11:33 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
 DEPFLAGS = -MMD -MP
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp  Brain.cpp
 
 DIR_OBJS = objs/
 

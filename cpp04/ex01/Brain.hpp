@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 13:51:05 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/14 11:06:15 by anamedin         ###   ########.fr       */
+/*   Created: 2025/08/14 09:12:14 by anamedin          #+#    #+#             */
+/*   Updated: 2025/08/14 09:15:35 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include <string>
 
-class Cat : public Animal {
+class Brain { 
   private:
-    Brain   *_brain;
+    std::string _ideas[100];
 
   public:
-    Cat();
-    ~Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-
-    void makeSound() const;
+    Brain();
+    ~Brain();
+    Brain(const Brain& other);
+    Brain& operator=(const Brain& other);
 };
 
 #endif
-

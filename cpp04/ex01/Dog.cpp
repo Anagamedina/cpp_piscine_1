@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 14:11:36 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/13 14:36:42 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/14 11:11:16 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(){
-  _type = "Dog";
+Dog::Dog() : Animal(), _brain(new Brain()) {
   std::cout << "Dog default...." << std::endl;
 }
 

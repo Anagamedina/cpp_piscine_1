@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 12:34:35 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/13 15:01:07 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/14 11:03:22 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 int main (void ){
   {
 
-    const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
@@ -27,22 +26,35 @@ int main (void ){
     std::cout << i->getType() << " " << std::endl;
     i->makeSound();
     j->makeSound();
-    meta->makeSound();
   
-    delete meta;
     delete j;
     delete i;
   }
 
-  std::cout << "WrongAnimal" << std::endl;
-  const WrongAnimal* meta = new WrongAnimal();
-  const WrongAnimal* k = new WrongCat();
-  std::cout << k->getType() << " " << std::endl;
-  k->makeSound();
-  meta->makeSound();
-  
-  delete meta;
-  delete k;
-  return  (0);
-}
+  std::cout << "ARRAY OF ANIMALS OBJECTS ->" << std::endl;
+  Animal *animal_arr[4];
+  for (int i = 0; i < 4; i++){
+    if(i % 2 == 0){
+      animal_arr[i] = new Dog();
+      std::cout << "_______" << std::endl;
+    }
+    else{
+      animal_arr[i] = new Cat();
+      std::cout << "_______" << std::endl;
 
+    }
+    for(int i = 0; i < 4; i++){
+      animal_arr[i]->makeSound();
+    }
+    std::cout << "-------" << std::endl;
+    for(int i = 0; i < 4; i++){
+      delete animal_arr[i];
+  }
+
+    std::cout << "SHALLOW COPY" <<  std::endl;
+    Cat a;
+    Cat b = a;
+    std::cout << "_____" << std::endl;
+  return  (0);
+  }
+}
