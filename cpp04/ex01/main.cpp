@@ -6,15 +6,13 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 12:34:35 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/14 11:03:22 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/14 17:31:03 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main (void ){
   {
@@ -55,6 +53,6 @@ int main (void ){
     Cat a;
     Cat b = a;
     std::cout << "_____" << std::endl;
-  return  (0);
-  }
+}
+return (0);
 }
