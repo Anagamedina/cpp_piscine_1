@@ -6,47 +6,64 @@
 #    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/11 12:02:39 by anamedin          #+#    #+#              #
-#    Updated: 2025/07/19 12:02:39 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/20 16:29:23 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Nombre del compilador (g++)
-CXX = c++
+# ===========================
+# CONFIGURATION
+# ===========================
 
-# Flags de compilación (opcional)
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
-
-# Nombre del ejecutable
+# Executable name
 NAME = megaphone
 
-# Archivos fuente
-SRCS = megaphone.cpp
+# Compiler
+CXX = c++
 
-# Archivos objeto (creados a partir de los archivos fuente)
-OBJS = $(SRCS:.cpp=.o)
+# Compilation flags
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
-# Regla por defecto (se ejecuta al invocar `make` sin argumentos)
+# Flags for compiling objects
+OBJ_FLAGS = $(CXXFLAGS) -MMD -c
+
+# ===========================
+# SOURCES AND OBJECTS
+# ===========================
+
+SRC = megaphone.cpp
+OBJS = objs/megaphone.o
+DEPS = deps/megaphone.d
+
+# ===========================
+# RULES
+# ===========================
+
+.PHONY: all clean fclean re
+
+# Compile everything
 all: $(NAME)
 
-# Regla para compilar el ejecutable
-$(NAME): $(OBJS) Makefile
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+# Create executable
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $@
 
-# Regla para compilar archivos .cpp en archivos .o
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Compile each .cpp to .o and generate dependencies
+objs/%.o: %.cpp Makefile
+	@mkdir -p objs/ deps/
+	$(CXX) $(OBJ_FLAGS) $< -o $@
+	@mv $(@:.o=.d) deps/
 
-# Regla para limpiar archivos generados
+# Remove object files and dependencies
 clean:
-	rm -f $(OBJS)
+	rm -rf objs/ deps/
 
+# Remove everything including executable
 fclean: clean
 	rm -f $(NAME)
 
+# Recompile from scratch
 re: fclean all
 
-
-# Esto indica que all, clean, fclean y re no son archivos, 
-# sino "etiquetas" para comandos de make.
-.PHONY: all clean fclean re
+# Include dependencies automatically
+-include $(DEPS)
 

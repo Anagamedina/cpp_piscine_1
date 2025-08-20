@@ -6,22 +6,16 @@
 /*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 12:46:21 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/29 18:55:20 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/20 16:44:11 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <iostream> 
-//
-//inicializando 
-//constructor 
+
 Contact::Contact(){
-  //codigo para inicializar atributos si hace falta 
 }
 
-//destructor
 Contact::~Contact(){
-  //codigo para liberar recusos si es necesario 
 }
 
 //

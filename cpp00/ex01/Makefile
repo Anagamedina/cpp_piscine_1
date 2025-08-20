@@ -3,51 +3,70 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
+#    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/19 12:28:44 by anamedin          #+#    #+#              #
-#    Updated: 2025/07/19 12:38:00 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/20 17:59:47 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Nombre del compilador
-CXX = c++
+# ===========================
+# CONFIGURATION
+# ===========================
 
-# Flags de compilación (opcional)
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
-
+# Executable name
 NAME = phonebook
 
-# Archivos fuente
+# Compiler
+CXX = c++
+
+# Compilation flags
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g #-fsanitize=address
+
+# Directories
+OBJ_DIR = objs/
+DEP_DIR = deps/
+
+# ===========================
+# SOURCES AND OBJECTS
+# ===========================
+
 SRCS = main.cpp PhoneBook.cpp Contact.cpp
 
-# Archivos header (para incluirlos como dependencias y evitar re-link al compilar)
-HDR = Contact.hpp PhoneBook.hpp
+OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
+DEPS = $(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
 
-# Archivos objeto (creados a partir de los archivos fuente)
-OBJS = $(SRCS:.cpp=.o)
+# ===========================
+# RULES
+# ===========================
 
-# Regla por defecto (se ejecuta al invocar `make` sin argumentos)
+.PHONY: all clean fclean re
+
+# Compile everything
 all: $(NAME)
 
-# Regla para compilar el ejecutable
-$(NAME): $(OBJS) Makefile
+# Create executable
+$(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-# Regla para compilar archivos .cpp en archivos .o
-%.o: %.cpp $(HDR)
+# Compile each .cpp to .o and generate dependencies
+# $(OBJ_DIR)/%.o: %.cpp Makefile
+objs/%.o: %.cpp Makefile
+	@mkdir -p $(OBJ_DIR) $(DEP_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@mv $(@:.o=.d) $(DEP_DIR)
 
-# Regla para limpiar archivos generados
+# Remove object files and dependencies
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJ_DIR) $(DEP_DIR)
 
+# Remove everything including executable
 fclean: clean
 	rm -f $(NAME)
 
+# Recompile from scratch
 re: fclean all
 
+# Include dependencies automatically (headers are handled by -MMD)
+-include $(DEPS)
 
-# Esto indica que all, clean, fclean y re no son archivos, 
-# sino "etiquetas" para comandos de make.
-.PHONY: all clean fclean re

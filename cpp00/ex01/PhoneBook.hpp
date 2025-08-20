@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 14:05:21 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/30 13:52:10 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/20 17:27:05 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,14 @@
 #include <cstdlib> 
 
 class PhoneBook { 
+  
+  private:
+    Contact _contacts[8];
+    size_t _max_size;
+    size_t _index;
+    
   public:
-    PhoneBook(); //size
+    PhoneBook();
     ~PhoneBook( void );
 
 	//getter
@@ -34,10 +40,7 @@ class PhoneBook {
 	void print_table();
   void exit();
 
-  private:
-    Contact _contacts[8];
-    size_t _max_size;
-    size_t _index;
+  
 };
 
 #endif
