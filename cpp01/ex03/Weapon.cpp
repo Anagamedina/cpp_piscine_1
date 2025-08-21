@@ -6,38 +6,41 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:47:16 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/07 08:52:18 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:35:22 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
 #include <iostream>
+#include "Weapon.hpp"
 
+// Constructor: initialize weapon type
 Weapon::Weapon(std::string type)
 {
-  //buena práctica si quieres reutilizar lógica o mantener el código más limpio
-  //  _type = type _______o____setType
-  setType(type);
-  std::cout << "***Contructor Weapon ***" << _type << "called:   " << std::endl;
-
+    // Use setType() for consistency and maintainability
+    setType(type);
+    std::cout << "[🪓 Constructor] Weapon created: " 
+              << _type << std::endl;
 }
+
+// Destructor
 Weapon::~Weapon()
 {
-  std::cout << "***Destructor Weapon ***" << _type << "called:   " << std::endl;
-
+    std::cout << "[💀 Destructor] Weapon destroyed: " 
+              << _type << std::endl;
 }
-//&Weapon--> Más eficiente (no copia)
-//const ->> NO va a modificar el objeto
+
+// Get the weapon type (const reference, does not modify object)
 const std::string& Weapon::getType() const
 {
-  return _type;
-
+    return _type;
 }
+
+// Set a new type for the weapon
 void Weapon::setType(std::string type)
 {
- _type = type;
-
+    _type = type;
 }
+
 
 
 

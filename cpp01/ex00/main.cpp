@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:52:56 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/31 13:09:55 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:17:58 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,35 @@
 
 int main()
 {
-  std::string   input;
+    std::string input;
+    // ==========================
+    // STACK ZOMBIE CREATION
+    // ==========================
+    std::cout << "\n=== STACK ZOMBIE CREATION ===" << std::endl;
+    std::cout << "Enter a name for the stack zombie: ";
+    if (!std::getline(std::cin, input)) 
+    {
+        std::cerr << "Error: failed to read input" << std::endl;
+        return 1; 
+    }
+    randomChump(input); // create Zombie on the stack
 
-  std::cout <<"Zombi saved in the stack: ";
-  if (!std::getline(std::cin, input))
-  {
-    std::cerr << std::endl << "Error: failed to read input " << std:: endl;
-    std::cout << "Exited properly. " << std::endl;
-    return (1);
-  }
+    // ==========================
+    // HEAP ZOMBIE CREATION
+    // ==========================
+    std::cout << "\n=== HEAP ZOMBIE CREATION ===" << std::endl;
+    std::cout << "Enter a name for the heap zombie: ";
+    if (!std::getline(std::cin, input)) 
+    {
+        std::cerr << "Error: failed to read input" << std::endl;
+        return 1;
+    }
+    Zombie* zombiPtr = newZombie(input); 
+    zombiPtr->announce();              
+    delete zombiPtr;                  
 
-  //randomChump
-  randomChump(input);
+    std::cout << "\nAll zombies handled correctly. Exiting program." << std::endl;
 
-  std::cout <<"Zombi saved in the HEAP: ";
-  if (!std::getline(std::cin, input))
-  {
-    std::cerr << std::endl << "Error: failed to read input " << std:: endl;
-    std::cout << "Exited properly. " << std::endl;
-    return (1);
-  }
-
-  //newZombie
-  Zombie *zombiPtr = newZombie(input); 
-  //announce
-  zombiPtr->announce();
-  delete(zombiPtr);
-  return (0);
-
-
+    return 0; 
 }
+

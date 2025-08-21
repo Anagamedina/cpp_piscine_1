@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:06:37 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/31 13:07:35 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:15:42 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,32 @@
 #include <iostream>
 #include <string>
 
+// 🧟 The Zombie class represents a simple zombie object.
+// Each zombie has a name and can "announce" itself.
 class Zombie
 {
   private:
-	std::string _name;
+    std::string _name;   // Zombie's name (private attribute)
 
   public:
-	  Zombie(std::string name);
-	  ~Zombie();
-	void announce(void); //esta funcion hara que se anuncie a si mismo 
+    Zombie(std::string name); // Constructor: initializes the zombie with a name
+    ~Zombie();                // Destructor: called when the zombie is destroyed
+
+    void announce(void);      // Makes the zombie announce itself
 };
 
+// ===========================
+// Utility functions
+// ===========================
+
+// Creates a Zombie on the HEAP and returns a pointer to it.
+// The caller is responsible for deleting it later (to avoid memory leaks).
 Zombie* newZombie(std::string name);
 
-  //esta funcion crea un zombie le asigna un nombre y lo retorna para que
-  //puedas usarlo fuera del alcance de la funcion
-
-
+// Creates a Zombie on the STACK, gives it a name,
+// and makes it announce itself immediately.
+// The zombie is destroyed automatically when the function ends.
 void randomChump(std::string name);
-  //esta funcion crea un zombie le asigna un nombre y hace que se anuncie 
-  //indmediatamente 
 
 #endif
+

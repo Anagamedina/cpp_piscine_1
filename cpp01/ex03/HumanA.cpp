@@ -6,25 +6,30 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 11:54:51 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/07 10:10:13 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:32:22 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weaponA(weapon)
+// Constructor: initialize name and weapon reference
+HumanA::HumanA(std::string name, Weapon& weapon) 
+    : _name(name), _weaponA(weapon)
 {
-  std::cout << "***Contructor HumanA ***" << _name << "****:  " << std::endl;
+    std::cout << "[🧑‍🎤 Constructor] HumanA created: " 
+              << _name << " with weapon: " 
+              << _weaponA.getType() << std::endl;
 }
 
+// Destructor
 HumanA::~HumanA()
 {
-  std::cout << "***Destructor" << _name << "***" << std::endl;
+    std::cout << "[💀 Destructor] HumanA destroyed: " << _name << std::endl;
 }
 
-void  HumanA::attack()
+// Attack function
+void HumanA::attack()
 {
-  std::cout << _name << "attacks with:   " << _weaponA.getType() << std::endl;
+    std::cout << _name << " attacks with: " << _weaponA.getType() << std::endl;
 }
-
 

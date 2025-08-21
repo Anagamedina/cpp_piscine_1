@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:21:11 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/31 12:26:33 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:07:14by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-//Esta funcion crea un zombi , le pone
+void randomChump(std::string name) {
+    if (name.empty())
+        name = "unknown";
 
+    // Create a Zombie object on the stack
+    Zombie z(name);
+    z.announce();
 
-void randomChump(std::string name){
-  if (name.empty())
-    name = "unknown";
-  Zombie z(name);  //se crea en el stack 
-  z.announce();    //se anuncia                   
-
- // destructor se llama automáticamente aquí
-
+    // When this function ends, the Zombie is automatically destroyed
+    // because it was created on the stack (automatic storage)
 }

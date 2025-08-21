@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:04:01 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/07 16:39:09 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:55:15 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,26 @@
 
 int main(void)
 {
-  Harl objHarl;
-  
-  objHarl.complain("DEBUG");
-  objHarl.complain("INFO");
-  objHarl.complain("WARNING");
-  objHarl.complain("ERROR");
-  objHarl.complain("RANDOM");
+    std::cout << "===== Harl Complaint Demo =====\n" << std::endl;
 
-  return (0);
+    Harl objHarl;
+
+    std::cout << "[DEBUG] Calling complain with DEBUG level\n";
+    objHarl.complain("DEBUG");
+
+    std::cout << "\n[INFO] Calling complain with INFO level\n";
+    objHarl.complain("INFO");
+
+    std::cout << "\n[WARNING] Calling complain with WARNING level\n";
+    objHarl.complain("WARNING");
+
+    std::cout << "\n[ERROR] Calling complain with ERROR level\n";
+    objHarl.complain("ERROR");
+
+    std::cout << "\n[RANDOM] Calling complain with unknown level\n";
+    objHarl.complain("RANDOM");
+
+    std::cout << "\n===== Demo Completed =====" << std::endl;
+
+    return 0;
 }
-
-/*int main(int argc, char *argv[]){
-  
-  Harl  objHarl;
-  
-  if (argc == 2)
-    objHarl.complain(argv[1]);
-  else
-  {
-    std::cerr << "Usage: ./harl <complain level>" << std::endl;
-    std::cerr << "Only: 'info' , 'debug' , 'warning ',  'error' " << std::endl;
-    return (1);
-  }
-
-
-  return (0);
-}*/

@@ -6,19 +6,12 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 14:11:20 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/31 15:44:36 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:24:56 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
-
-//debe reservar memoria para N objetos zombie en una unica asignacion de
-//memoria (new)
-//inicializar cada uno de los zombis, asignandoles el nombre pasado como
-//parametro 
-//la funcion debe devolver un puntero al primer zombie de la horda 
-
+// Creates a horde of N Zombies on the HEAP
 Zombie *zombieHorde(int N, std::string name)
 {
 	Zombie *zombiPtr = new Zombie[N];
@@ -27,7 +20,6 @@ Zombie *zombieHorde(int N, std::string name)
 	{
 		zombiPtr[i].setName(name);
 	}
-	//es dinamico puedo devolverlo para usarlo despues 
 	return (zombiPtr);
 	
 }

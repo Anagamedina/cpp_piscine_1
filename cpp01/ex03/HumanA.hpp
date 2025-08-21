@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:56:39 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/07 10:12:09 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:31:22 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,24 @@
 #include "Weapon.hpp"
 #include <string>
 #include <iostream>
+
+// 🧑‍🎤 HumanA always has a weapon assigned via reference
 class HumanA
 {
-	private:
-		std::string _name;
-		Weapon&     _weaponA; //es una referencia a un objeto de tipo Weapon
+    private:
+        std::string _name;   // Name of the human
+        Weapon&     _weaponA; // Reference to a Weapon object (cannot be null)
 
-	public:
-		HumanA(std::string name, Weapon& weapon);
-		~HumanA();
+    public:
+        // Constructor: initialize name and weapon reference
+        HumanA(std::string name, Weapon& weapon);
 
-		void attack();
-		
+        // Destructor
+        ~HumanA();
+
+        // Make the human attack with its weapon
+        void attack();
 };
 
 #endif
+
