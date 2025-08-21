@@ -3,40 +3,69 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
+#    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 10:56:06 by anamedin          #+#    #+#              #
-#    Updated: 2025/07/31 13:00:54 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/21 12:30:55 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# ===========================
+# CONFIGURATION
+# ===========================
+
+# Executable name
+NAME = brainz
+
+# Compiler
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+# Compilation flags
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
-NAME = brainz
+# Flags for compiling objects
+OBJ_FLAGS = $(CXXFLAGS) -MMD -c
+
+# ===========================
+# SOURCES AND OBJECTS
+# ===========================
 
 SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
-HDR = Zombie.hpp
+OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
+DEPS = $(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
 
-OBJS = $(SRCS:.cpp=.o)
-
-all: $(NAME)
-
-$(NAME): $(OBJS) Makefile
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
-
-%.o: %.cpp $(HDR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-clean:
-	rm -rf $(OBJS)
-
-fclean: clean
-	rm -rf $(NAME)
-
-re: fclean all
+# ===========================
+# RULES
+# ===========================
 
 .PHONY: all clean fclean re
+
+# Compile everything
+all: $(NAME)
+
+# Create executable
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+# Compile each .cpp to .o and generate dependencies
+# $(OBJ_DIR)/%.o: %.cpp Makefile
+objs/%.o: %.cpp Makefile
+	@mkdir -p $(OBJ_DIR) $(DEP_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@mv $(@:.o=.d) $(DEP_DIR)
+
+# Remove object files and dependencies
+clean:
+	rm -rf $(OBJ_DIR) $(DEP_DIR)
+
+# Remove everything including executable
+fclean: clean
+	rm -f $(NAME)
+
+# Recompile from scratch
+re: fclean all
+
+# Include dependencies automatically (headers are handled by -MMD)
+-include $(DEPS)
 

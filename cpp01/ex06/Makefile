@@ -3,39 +3,69 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
+#    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/04 13:02:47 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/04 13:03:14 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/21 12:39:21 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# ===========================
+# CONFIGURATION
+# ===========================
+
+# Executable name
+NAME = harl
+
+# Compiler
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98  -fsanitize=address
+# Compilation flags
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g -fsanitize=address
 
-NAME = harl
+# Directories
+OBJ_DIR = objs/
+DEP_DIR = deps/
+
+# ===========================
+# SOURCES AND OBJECTS
+# ===========================
 
 SRCS = main.cpp Harl.cpp
 
-HDR = Harl.hpp
+OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
+DEPS = $(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
 
-OBJS = $(SRCS:.cpp=.o)
+# ===========================
+# RULES
+# ===========================
 
+.PHONY: all clean fclean re
+
+# Compile everything
 all: $(NAME)
 
-$(NAME): $(OBJS) Makefile
+# Create executable
+$(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp $(HDR)
+# Compile each .cpp to .o and generate dependencies
+# $(OBJ_DIR)/%.o: %.cpp Makefile
+objs/%.o: %.cpp Makefile
+	@mkdir -p $(OBJ_DIR) $(DEP_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@mv $(@:.o=.d) $(DEP_DIR)
 
+# Remove object files and dependencies
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJ_DIR) $(DEP_DIR)
 
+# Remove everything including executable
 fclean: clean
 	rm -f $(NAME)
 
+# Recompile from scratch
 re: fclean all
 
-.PHONY: all clean fclean re
+# Include dependencies automatically (headers are handled by -MMD)
+-include $(DEPS)

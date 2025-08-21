@@ -3,38 +3,73 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
+#    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 13:26:30 by anamedin          #+#    #+#              #
-#    Updated: 2025/07/31 15:50:16 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/21 12:33:27 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
+# ===========================
+# CONFIGURATION
+# ===========================
+
+# Executable name
 NAME = hordeofZombies
 
+# Compiler
+CXX = c++
+
+# Compilation flags
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g #-fsanitize=address
+
+# Directories
+OBJ_DIR = objs/
+DEP_DIR = deps/
+
+# ===========================
+# SOURCES AND OBJECTS
+# ===========================
+
 SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
-HDR = Zombie.hpp
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
+DEPS = $(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
 
+# ===========================
+# RULES
+# ===========================
+
+.PHONY: all clean fclean re
+
+# Compile everything
 all: $(NAME)
 
-$(NAME): $(OBJS) Makefile
+# Create executable
+$(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp $(HDR)
+# Compile each .cpp to .o and generate dependencies
+# $(OBJ_DIR)/%.o: %.cpp Makefile
+objs/%.o: %.cpp Makefile
+	@mkdir -p $(OBJ_DIR) $(DEP_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@mv $(@:.o=.d) $(DEP_DIR)
 
+# Remove object files and dependencies
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJ_DIR) $(DEP_DIR)
 
+# Remove everything including executable
 fclean: clean
 	rm -f $(NAME)
 
+# Recompile from scratch
 re: fclean all
 
-.PHONY: all clean fclean re
+# Include dependencies automatically (headers are handled by -MMD)
+-include $(DEPS)
+
+
 
