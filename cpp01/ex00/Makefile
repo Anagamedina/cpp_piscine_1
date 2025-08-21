@@ -6,7 +6,7 @@
 #    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 10:56:06 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/21 12:30:55 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/21 12:44:29 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,11 @@ NAME = brainz
 CXX = c++
 
 # Compilation flags
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g -fsanitize=address
 
-# Flags for compiling objects
-OBJ_FLAGS = $(CXXFLAGS) -MMD -c
+# Directories
+OBJ_DIR = objs/
+DEP_DIR = deps/
 
 # ===========================
 # SOURCES AND OBJECTS
