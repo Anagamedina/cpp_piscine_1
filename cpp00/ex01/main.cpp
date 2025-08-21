@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:01:01 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/20 17:01:44 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 11:18:39 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int main()
     PhoneBook phone_book;   // Create phonebook object
     std::string input_user; // Store user input
 
-    std::cout << "📖 Welcome to My Phonebook!" << std::endl;
+    std::cout << "🌸🌸 Welcome to My Phonebook!🌸🌸" << std::endl;
 
     while (1) 
     {
         // Show available commands
-        std::cout << "\nAvailable commands: ADD - SEARCH - EXIT" << std::endl;
-        std::cout << "Enter command: ";
+        std::cout << "\nAvailable commands: ✏️  ADD - 🔍SEARCH - 🚪EXIT" << std::endl;
+        std::cout << "Enter command:👉 ";
         std::getline(std::cin, input_user);
 
         // Handle Ctrl+D (EOF)
