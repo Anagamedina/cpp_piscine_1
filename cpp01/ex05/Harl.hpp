@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:05:25 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/21 13:56:12 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/22 13:38:30 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class Harl
 
     Harl();
     ~Harl();
-    // Public method to complain based on level string
     void  complain(std::string level );
 
 };

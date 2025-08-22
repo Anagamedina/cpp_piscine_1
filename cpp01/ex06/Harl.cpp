@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:22:37 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/07 16:39:39 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/22 13:46:44 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,29 @@ Harl::~Harl(){}
 
 void Harl::_debug(void){
   std::cout << "[ DEBUG ] " << std::endl;
-  std::cout << "I love having extra bacon on my burguer. " << std::endl;
+  std::cout << "	I love having extra bacon for my "
+		"7XL-double-cheese-triple-pickle-specialketchup burger."
+		" I really do!"<< std::endl;
 }
 
 void Harl::_info(void){
 
   std::cout << "[ INFO ] " << std::endl;
-  std::cout << "Adding extra bacon costs more money. " << std::endl;
+  std::cout << "	I cannot believe adding extra bacon costs more money."
+				 "You didn't put enough bacon in my burger!"
+				 "If you did, I wouldn't be asking for more!" << std::endl;
 }
 
 void Harl::_warning(void){
   std::cout << "[ WARNING ] " << std::endl;
-  std::cout << "I think I deserve some free bacon  " << std::endl;
+  std::cout << "	I think I deserve to have some extra bacon for free. "
+	"I’ve been coming for years, whereas you started working here just last month." << std::endl;
 
 }
 
 void Harl::_error(void){
   std::cout << "[ ERROR ] " << std::endl;
-  std::cout << "This is unacceptable! I want to speak to the manager " << std::endl;
+  std::cout << "	This is unacceptable! I want to speak to the manager now." << std::endl;
 
 }
 
