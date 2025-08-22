@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:01:01 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/22 10:02:51 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:17:47 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int main()
             //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clean buffer\n
             std::getline(std::cin, index_contact);
 
-            if (std::cin.eof()) // Handle Ctrl+D
+            if (std::cin.eof()) 
             {
                 std::cout << "\n👋 Exiting Phonebook. See you next time!" << std::endl;
                 break;

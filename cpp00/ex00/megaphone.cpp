@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 12:13:59 by anamedin          #+#    #+#             */
-/*   Updated: 2025/07/19 12:07:50 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/21 11:05:08 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <iostream>
-#include <cctype>
 
 
 int	main( int argc, char **argv )

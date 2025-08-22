@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 12:46:28 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/20 16:44:40 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:26:41 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,16 @@
 #include <string>
 
 class Contact{
+
+   private:
+    std::string first_name;
+    std::string phone_number;
+    std::string last_name;
+    std::string nickname;
+    std::string darkest_secret;
+    
   public:
+  
     Contact();
     ~Contact();
 
@@ -35,15 +44,6 @@ class Contact{
     std::string get_nickname(void);
     std::string get_secret(void);
     std::string get_phone(void);
-
-
-
-  private:
-    std::string first_name;
-    std::string phone_number;
-    std::string last_name;
-    std::string nickname;
-    std::string darkest_secret;
 
 };
 
