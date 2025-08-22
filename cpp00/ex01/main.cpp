@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:01:01 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/21 11:18:39 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/22 10:02:51 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 int main()
 {
-    PhoneBook phone_book;   // Create phonebook object
-    std::string input_user; // Store user input
+    PhoneBook       phone_book;   // Create phonebook object
+    std::string     input_user; // Store user input
 
     std::cout << "🌸🌸 Welcome to My Phonebook!🌸🌸" << std::endl;
 
@@ -57,7 +57,10 @@ int main()
             phone_book.print_table(); // Print table of contacts
 
             std::cout << "Select contact index: ";
-            std::string index_contact;
+            
+            std::string     index_contact;
+            
+            //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clean buffer\n
             std::getline(std::cin, index_contact);
 
             if (std::cin.eof()) // Handle Ctrl+D

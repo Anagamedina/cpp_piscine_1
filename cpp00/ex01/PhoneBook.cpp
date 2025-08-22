@@ -57,8 +57,8 @@ void PhoneBook::print_columns(std::string str)
 // Add a new contact to the phonebook
 void PhoneBook::add(void)
 {
-    Contact new_contact;
-    std::string input;
+    Contact         new_contact;
+    std::string     input;
 
     std::cout << "Add new contact:\n";
 
@@ -154,7 +154,7 @@ void PhoneBook::searchContact(int index)
     std::cout << "Enter index of contact you want to see:\n";
 
     // Check invalid index
-    if (index < 0 || index >= (int)this->_max_size || std::isalpha(index) == 1)
+    if (index < 0 || index >= (int)this->_max_size)
     {
         std::cout << "Index out of range" << std::endl;
         return;
