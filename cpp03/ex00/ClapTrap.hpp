@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 13:42:17 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/12 13:25:03 by anamedin         ###   ########.fr       */
+/*   Created: 2025/08/25 13:32:35 by anamedin          #+#    #+#             */
+/*   Updated: 2025/08/25 13:32:40 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,17 @@
 #define CYN "\e[0;36m"
 #define WHT "\e[0;37m"
 
+
+// =======================
+// Class Definition
+// =======================
 class ClapTrap
 {
   private:
+  
+  	// =======================
+	// Attributes / Member Variables
+	// =======================
 	std::string		_name;
 	unsigned int	_hitPoints;
 	unsigned int	_energyPoints;
@@ -35,28 +43,45 @@ class ClapTrap
 
 
   public:
+  
+  	// =======================
+	// Constructors / Destructor
+	// =======================
 	ClapTrap();
 	~ClapTrap();
 	ClapTrap(const std::string& name);
 	ClapTrap(const ClapTrap& copy);
 	ClapTrap& operator=(const ClapTrap& other);
 
+	// =======================
+	// Getters
+	// =======================
 	std::string		getName(void) const;
 	unsigned int	getHitPoints(void) const;
 	unsigned int	getEnergyPoints(void) const;
 	unsigned int	getDamagePoints(void) const;
 
+	// =======================
+	// Setters
+	// =======================
 	void			setName(const std::string& name);
 	void			setHitPoints(int hp);
 	void			setEnergyPoints(int ep);
 	void			setAttackDamage(int ad);
 
+	// =======================
+	// Action Methods
+	// =======================
+
 	void			attack(const std::string& target);
 	void			takeDamage(unsigned int amount);
 	void			beRepaired(unsigned int amount);
+	
+	// =======================
+	// Utility / Debug
+	// =======================
 	void			printStatus(void) const;
 
 };
 
 #endif
-
