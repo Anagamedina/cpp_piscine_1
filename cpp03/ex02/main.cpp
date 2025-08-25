@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 14:33:33 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/12 15:27:48 by anamedin         ###   ########.fr       */
+/*   Created: 2025/08/11 15:51:07 by anamedin          #+#    #+#             */
+/*   Updated: 2025/08/25 15:00:23 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,20 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-
-int	main(){
+int main(void){
 
     ClapTrap	clap("Clap");
     ScavTrap	scav("Scav");
-    FragTrap	frag("Frag");
+    ScavTrap	frag("Frag");
 
-    clap.attack("Scav");
-    // scav.takeDamage();
-    scav.attack("Clap");
-//     clap.takeDamage(scav.getDamagePoints());
-//     scav.attack("Frag");
-//     frag.takeDamage(scav.getDamagePoints());
-//     frag.attack("Scav");
-//     scav.takeDamage(frag.getDamagePoints());
-//     scav.attack("Clap");
-//     clap.takeDamage(scav.getDamagePoints());
-//     scav.attack("Frag");
-//     frag.takeDamage(scav.getDamagePoints());
+    std::cout << std::endl;
+    std::cout << "ClapTrap " << clap.getName() << " attacks " << scav.getName() << std::endl;
+    clap.attack(scav.getName());
+    std::cout << std::endl;
+    std::cout << "ScavTrap " << scav.getName() << " attacks " << frag.getName() << std::endl;
+    scav.attack(frag.getName());
+    std::cout << std::endl;
+    std::cout << "FragTrap " << frag.getName() << " attacks " << clap.getName() << std::endl;
+    frag.attack(clap.getName());
+
 }
