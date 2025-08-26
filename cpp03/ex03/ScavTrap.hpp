@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 10:09:15 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/25 17:23:23 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/26 10:14:50 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
-#include <iostream>
-#include <string>
 
 // =======================
 // Class Definition

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Diamond.cpp                                        :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 17:28:04 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/25 17:28:49 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/26 10:28:11 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-
+// =======================
+// Constructors
+// =======================
 DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"), ScavTrap(), FragTrap(), name_("Default")
 {
-	hitPoints_ = 100;      // From FragTrap
-	attackDamage_ = 30;    // From FragTrap
-	energyPoints_ = 50;    // From ScavTrap
-	std::cout << GREEN << "DiamondTrap default constructor called for "
-			  << name_ << RESET << std::endl;
+	setHitPoints(100);      // From FragTrap
+	setEnergyPoints(50);    // From ScavTrap
+	setAttackDamage(30);    // From FragTrap
+	std::cout << GRN << "DiamondTrap default constructor called for "
+			  << name_ << YEL << std::endl;
 
 }
 
@@ -27,26 +29,31 @@ DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"), ScavTrap(), FragTrap
 DiamondTrap::DiamondTrap(const std::string& name) :
 ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), name_(name)
 {
-	hitPoints_ = 100;      // From FragTrap
-	attackDamage_ = 30;    // From FragTrap
-	energyPoints_ = 50;    // From ScavTrap
-	std::cout << GREEN << "DiamondTrap constructor called for "
-			  << name_ << RESET << std::endl;
+	setHitPoints(100);      // From FragTrap
+	setEnergyPoints(50);    // From ScavTrap
+	setAttackDamage(30);    // From FragTrap
+	
+	std::cout << GRN << "DiamondTrap constructor called for "
+			  << name_ << YEL << std::endl;
 }
 
 
-
+// =======================
+// Copy Constructor
+// =======================
 DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other), ScavTrap(other), FragTrap(other), name_(other.name_)
 {
-	std::cout << BLUE << "DiamondTrap copy constructor called"
-			  << RESET << std::endl;
+	std::cout << BLU << "DiamondTrap copy constructor called"
+			  << YEL << std::endl;
 }
 
 
-
+// =======================
+// Overload operator 
+// =======================
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 {
-	std::cout << MAGENTA << "DiamondTrap assignment operator called" << RESET << std::endl;
+	std::cout << MAG << "DiamondTrap assignment operator called" << YEL << std::endl;
 	if (this != &other)
 	{
 		ClapTrap::operator=(other);
@@ -56,15 +63,20 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 }
 
 
-
+// =======================
+// Destructor
+// =======================
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << RED << "DiamondTrap destructor called for "
-			  << name_ << RESET << std::endl;
+			  << name_ << YEL << std::endl;
 }
 
 
 
+// =======================
+// Action Methods
+// =======================
 void DiamondTrap::attack(const std::string& target)
 {
 	ScavTrap::attack(target);
@@ -74,8 +86,8 @@ void DiamondTrap::attack(const std::string& target)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << CYAN
+	std::cout << CYN
 			  << "I am " << name_
-			  << " and my ClapTrap name is " << ClapTrap::name_
-			  << RESET << std::endl;
+			  << " and my ClapTrap name is " << ClapTrap::getName()
+			  << YEL << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 13:55:19 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/25 17:04:52 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/26 09:39:12 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,7 @@ void ClapTrap::attack(const std::string& target){
 		return;
 	}
 	_energyPoints--;
-	std::cout << "[ClapTrap] " << _name << " attacks " << target << ", dealing " 
-			  << _attackDamage << " damage! Energy left: " << _energyPoints << std::endl;
+	std::cout << "[ClapTrap] " << _name << " attacks " << target  << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
@@ -124,7 +123,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 		_hitPoints = 0;
 	else
 		_hitPoints -= amount;
-	std::cout << "[ClapTrap] " << _name << " takes " << amount << " damage! HP left: " << _hitPoints << std::endl;
+	std::cout << "[ClapTrap] " << _name << " takes " << amount  << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
@@ -139,6 +138,9 @@ void ClapTrap::beRepaired(unsigned int amount){
 			  << ", Energy left: " << _energyPoints << WHT << std::endl;
 }
 
+// =======================
+// Utils
+// =======================
 void ClapTrap::printStatus(void) const{
 	std::cout << RED << "********** STATUS **********" << YEL << std::endl;
 	std::cout << "[ClapTrap] Name: " << _name << std::endl;
