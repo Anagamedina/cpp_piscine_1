@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:51:07 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 10:50:00 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/26 10:59:47 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,6 @@ int main(void){
 	std::cout << std::endl;
 	ironClap.printStatus();
 
-	/*ironClap.takeDamage(3);
-	ironClap.printStatus();
-
-	ironClap.beRepaired(5);
-	ironClap.printStatus();
-	std::cout << std::endl;*/
-
 	// =======================
 	// ScavTrap Section
 	// =======================
@@ -46,15 +39,7 @@ int main(void){
 	darkScav.attack(megaFrag.getName());
 	darkScav.printStatus();
 	
-	/*darkScav.takeDamage(30);
-	darkScav.printStatus();
-
-	darkScav.beRepaired(10);
-	darkScav.printStatus();*/
-
 	darkScav.guardGate();
-	//darkScav.printStatus();
-
 	std::cout << std::endl;
 
 	// =======================
@@ -66,20 +51,13 @@ int main(void){
 	megaFrag.attack(ironClap.getName());
 	megaFrag.printStatus();
 
-	/*megaFrag.takeDamage(40);
-	megaFrag.printStatus();
-
-	megaFrag.beRepaired(20);
-	megaFrag.printStatus();*/
-
 	megaFrag.highFiveGuys(); 
-	//megaFrag.printStatus();
 
 	// =======================
     // DiamondTrap attacks
     // =======================
     std::cout <<  "DiamondTrap " << diamond.getName() << " attacks " << megaFrag.getName() << std::endl;
-    diamond.attack(megaFrag.getName());
+	diamond.attack(megaFrag.getName());
 	diamond.printStatus();
     diamond.whoAmI();
 	
