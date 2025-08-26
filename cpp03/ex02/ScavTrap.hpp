@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 10:09:15 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/12 10:16:45 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/25 15:57:12 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <iostream>
 #include <string>
 
+// =======================
+// Class Definition
+// =======================
 class ScavTrap : public ClapTrap { 
 	public:
 		ScavTrap();
@@ -25,7 +28,9 @@ class ScavTrap : public ClapTrap {
 		ScavTrap(const ScavTrap& copy);
 		ScavTrap& operator=(const ScavTrap& other);
 
-		//member functions 
+	// =======================
+	// Action Methods
+	// ======================= 
 		void attack(const std::string& target);
 		void guardGate();
 

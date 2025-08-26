@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 13:55:19 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/25 13:27:37 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/25 16:59:48 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,79 @@ ClapTrap::ClapTrap(const ClapTrap& other){
 }
 
 // =======================
+// Overload operator 
+// =======================
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other){
+	if (this != &other){
+		_name = other._name;
+		_hitPoints = other._hitPoints;
+		_energyPoints = other._energyPoints;
+		_attackDamage = other._attackDamage;\
+	}
+	return *this;
+}
+
+
+// =======================
 // Destructor
 // =======================
 ClapTrap::~ClapTrap(){
 	std::cout << "[ClapTrap] Destructor called: " << _name << std::endl;
 }
+
+
+
+//getters
+
+std::string ClapTrap::getName(void) const{
+	return _name;
+}
+
+unsigned int ClapTrap::getHitPoints(void) const{
+	return _hitPoints;
+}
+
+unsigned int ClapTrap::getEnergyPoints(void) const{
+	return _energyPoints;
+}
+
+unsigned int ClapTrap::getDamagePoints(void) const{
+	return _attackDamage;
+}
+
+// =======================
+// Setters Methods
+// =======================
+ void ClapTrap::setName(const std::string& name) {
+		_name = name;
+ }
+
+ void ClapTrap::setHitPoints(int hp) {
+		if (hp < 0)
+			_hitPoints = 0;
+		else
+			_hitPoints = hp;
+ }
+
+ void ClapTrap::setEnergyPoints(int ep) {
+		if (ep < 0)
+			_energyPoints = 0;
+		else
+			_energyPoints = ep;
+ }
+
+ void 	ClapTrap::setAttackDamage(int ad) {
+		if (ad < 0)
+			_attackDamage = 0;
+		else
+			_attackDamage = ad;
+ }
+
+
+
+
+
 
 // =======================
 // Action Methods

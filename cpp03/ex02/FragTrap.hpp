@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 12:36:47 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/12 14:56:42 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/25 16:05:38 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,19 @@
 # include <string>
 # include <iostream>
 
-class FragTrap : public ClapTrap{
+class FragTrap : public ClapTrap
+{
 	public:
+	
 		FragTrap();
 		~FragTrap();
 		FragTrap(const std::string& name);
 		FragTrap(const FragTrap& copy);
-
 		FragTrap& operator=(const FragTrap& other);
+		
+		// =======================
+		// Action Methods
+		// =======================
 		void highFiveGuys(void);
 
 };

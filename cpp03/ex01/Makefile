@@ -3,52 +3,72 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+         #
+#    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/11 15:52:53 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/12 12:11:26 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/25 15:42:06 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
+# ===========================
+# CONFIGURATION
+# ===========================
+
+# Executable name
 NAME = clap
 
+# Compiler
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98  #-fsanitize=address
+# Compilation flags
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g #-fsanitize=address
 
-DEPFLAGS = -MMD -MP
+# Directories
+OBJ_DIR = objs/
+DEP_DIR = deps/
+
+# ===========================
+# SOURCES AND OBJECTS
+# ===========================
 
 SRCS= main.cpp ClapTrap.cpp ScavTrap.cpp
 
+OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
+DEPS = $(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
 
-HDR = ClapTrap.hpp ScavTrap.hpp
+# ===========================
+# RULES
+# ===========================
 
-DIR_OBJS = objs/
+.PHONY: all clean fclean re
 
-OBJS = $(addprefix $(DIR_OBJS), $(SRCS:.cpp=.o))
+# Compile everything
+all: $(NAME)
 
-DEPS = $(OBJS:.o=.d)
-
-all: $(DIR_OBJS) $(NAME)
-
-$(DIR_OBJS):
-	mkdir -p $(DIR_OBJS)
-	
-$(NAME): $(OBJS) Makefile
+# Create executable
+$(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-$(DIR_OBJS)%.o: %.cpp $(HDR)
-	$(CXX) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+# Compile each .cpp to .o and generate dependencies
+# $(OBJ_DIR)/%.o: %.cpp Makefile
+objs/%.o: %.cpp Makefile
+	@mkdir -p $(OBJ_DIR) $(DEP_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@mv $(@:.o=.d) $(DEP_DIR)
 
+# Remove object files and dependencies
 clean:
-	rm -rf $(DIR_OBJS)
+	rm -rf $(OBJ_DIR) $(DEP_DIR)
 
+# Remove everything including executable
 fclean: clean
 	rm -f $(NAME)
 
+# Recompile from scratch
 re: fclean all
 
+# Include dependencies automatically (headers are handled by -MMD)
 -include $(DEPS)
 
-.PHONY: all clean fclean re
 

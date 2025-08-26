@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 13:32:35 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/25 13:32:40 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/25 15:26:20 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,6 @@ class ClapTrap
 
   public:
   
-  	// =======================
-	// Constructors / Destructor
-	// =======================
 	ClapTrap();
 	~ClapTrap();
 	ClapTrap(const std::string& name);

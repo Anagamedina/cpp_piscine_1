@@ -6,13 +6,15 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 10:17:18 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/12 15:38:45 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/25 16:17:56 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-//default contructor 
+// =======================
+// Constructors
+// =======================
 ScavTrap::ScavTrap() : ClapTrap("default"){
 	setHitPoints(100);
 	setEnergyPoints(50);
@@ -22,8 +24,6 @@ ScavTrap::ScavTrap() : ClapTrap("default"){
 }
 
 
-//constructor overload
-
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name){
 	setHitPoints(100);
 	setEnergyPoints(50);
@@ -31,7 +31,9 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name){
 	std::cout << "ScavTrap overload contructor called for" << getName() << std::endl;
 }
 
-//copy contructor 
+// =======================
+// Copy Constructor
+// ======================= 
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other){
 	std::cout << "ScavTRap copy constructor called for " << getName() << std::endl;
@@ -39,8 +41,9 @@ ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other){
 }
 
 
-
-//assigment operator overload 
+// =======================
+// Overload operator 
+// ======================= 
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other){
 	if (this != &other){
@@ -53,12 +56,16 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other){
 	return *this;
 }
 
-//destructor 
+// =======================
+// Destructor
+// =======================
 ScavTrap::~ScavTrap(){
 	std::cout << "ScavTrap destructor called for " << _name << std::endl;
 }
 
-//memebr fucntions
+// =======================
+// Action Methods
+// =======================
 
 void ScavTrap::attack(const std::string& target){
 	if (_energyPoints == 0 || _hitPoints == 0){
