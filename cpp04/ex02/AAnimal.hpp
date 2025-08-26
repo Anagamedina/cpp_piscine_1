@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 12:38:38 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 18:04:24 by anamedin         ###   ########.fr       */
+/*   Created: 2025/08/26 17:44:04 by anamedin          #+#    #+#             */
+/*   Updated: 2025/08/26 18:15:21 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 #include <iostream>
 #include <string>
+
 
 #define DEFAULT "\e[0;30m"
 #define RED "\e[0;31m"
@@ -24,22 +25,22 @@
 #define MAG "\e[0;35m"
 #define CYN "\e[0;36m"
 #define WHT "\e[0;37m"
-class Animal { 
+
+class AAnimal {
   protected:
 
 	std::string _type;
 
   public:
 
-	Animal();
-	virtual ~Animal();
-	Animal(const Animal& copy);
-	Animal& operator=(const Animal& other);
+	AAnimal();
+	virtual ~AAnimal();
+	AAnimal(const AAnimal& copy);
+	AAnimal& operator=(const AAnimal& other);
 
 	std::string		getType(void)const;
-	virtual void	makeSound() const;
+	virtual void	makeSound() const = 0;
 
 };
 
 #endif
-

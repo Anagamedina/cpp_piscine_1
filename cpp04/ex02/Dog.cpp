@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 14:11:36 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 18:13:11 by anamedin         ###   ########.fr       */
+/*   Created: 2025/08/26 17:46:15 by anamedin          #+#    #+#             */
+/*   Updated: 2025/08/26 18:24:02 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //------------------------------
 // Constructor
 //------------------------------
-Dog::Dog() : Animal(), _brain(new Brain()) {
+Dog::Dog() : AAnimal(), _brain(new Brain()) {
     std::cout << "[Constructor] Dog created: " << _type << std::endl;
 }
 
@@ -23,14 +23,14 @@ Dog::Dog() : Animal(), _brain(new Brain()) {
 // Destructor
 //------------------------------
 Dog::~Dog() {
-    delete _brain;
+    delete _brain; // Liberar memoria para evitar memory leaks
     std::cout << "[Destructor] Dog destroyed: " << _type << std::endl;
 }
 
 //------------------------------
 // Copy Constructor
 //------------------------------
-Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain)) { 
+Dog::Dog(const Dog& other) : AAnimal(other), _brain(new Brain(*other._brain)) { 
     std::cout << "[Copy Constructor] Dog copied: " << _type << std::endl;
 }
 
@@ -39,8 +39,8 @@ Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain)) {
 //------------------------------
 Dog& Dog::operator=(const Dog& other) {
     if (this != &other) {  
-        Animal::operator=(other);      // Copia los datos de la clase base
-        *_brain = *other._brain;       // Copia el contenido del brain
+        AAnimal::operator=(other);    // Copia los datos de la clase base
+        *_brain = *other._brain;      // Copia el contenido del Brain
     }
     std::cout << "[Assignment Operator] Dog assigned: " << _type << std::endl;
     return *this;
@@ -52,3 +52,4 @@ Dog& Dog::operator=(const Dog& other) {
 void Dog::makeSound() const { 
     std::cout << "[Sound] " << _type << " says: Wooof!" << std::endl;
 }
+

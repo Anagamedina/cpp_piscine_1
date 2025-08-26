@@ -1,54 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 14:11:36 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 18:13:11 by anamedin         ###   ########.fr       */
+/*   Created: 2025/08/26 17:42:55 by anamedin          #+#    #+#             */
+/*   Updated: 2025/08/26 18:20:56 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "AAnimal.hpp"
 
 //------------------------------
 // Constructor
 //------------------------------
-Dog::Dog() : Animal(), _brain(new Brain()) {
-    std::cout << "[Constructor] Dog created: " << _type << std::endl;
+AAnimal::AAnimal() : _type("AAnimal") {
+    std::cout << "[Constructor] AAnimal created: " << _type << std::endl;
 }
 
 //------------------------------
 // Destructor
 //------------------------------
-Dog::~Dog() {
-    delete _brain;
-    std::cout << "[Destructor] Dog destroyed: " << _type << std::endl;
+AAnimal::~AAnimal() {
+    std::cout << "[Destructor] AAnimal destroyed: " << _type << std::endl;
 }
 
 //------------------------------
 // Copy Constructor
 //------------------------------
-Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain)) { 
-    std::cout << "[Copy Constructor] Dog copied: " << _type << std::endl;
+AAnimal::AAnimal(const AAnimal& other) : _type(other._type) {
+    std::cout << "[Copy Constructor] AAnimal copied: " << _type << std::endl;
 }
 
 //------------------------------
 // Copy Assignment Operator
 //------------------------------
-Dog& Dog::operator=(const Dog& other) {
-    if (this != &other) {  
-        Animal::operator=(other);      // Copia los datos de la clase base
-        *_brain = *other._brain;       // Copia el contenido del brain
+AAnimal& AAnimal::operator=(const AAnimal& other) {
+    if (this != &other) {
+        this->_type = other._type;
     }
-    std::cout << "[Assignment Operator] Dog assigned: " << _type << std::endl;
+    std::cout << "[Assignment Operator] AAnimal assigned: " << _type << std::endl;
     return *this;
 }
 
 //------------------------------
 // Member Function: makeSound
 //------------------------------
-void Dog::makeSound() const { 
-    std::cout << "[Sound] " << _type << " says: Wooof!" << std::endl;
+void AAnimal::makeSound() const {
+    std::cout << "[Sound] " << _type << " makes no sound." << std::endl;
 }
+
+//------------------------------
+// Getter: getType
+//------------------------------
+std::string AAnimal::getType() const {
+    return _type;
+}
+

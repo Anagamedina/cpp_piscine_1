@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 12:34:35 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/14 17:31:03 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/26 18:19:28 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,81 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-int main (void ){
-  {
+#define DEFAULT "\e[0;30m"
+#define RED "\e[0;31m"
+#define GRN "\e[0;32m"
+#define YEL "\e[0;33m"
+#define BLU "\e[0;34m"
+#define MAG "\e[0;35m"
+#define CYN "\e[0;36m"
+#define WHT "\e[0;37m"
+
+int main(void) {
+    //------------------------------
+    // Single Animal Objects
+    //------------------------------
+    std::cout << GRN << "=== Single Animal Objects ===" << WHT << std::endl;
 
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
+    std::cout << BLU << "[Type] j is a " << j->getType() << WHT << std::endl;
+    std::cout << BLU << "[Type] i is a " << i->getType() << WHT << std::endl;
+
+    std::cout << MAG << "[Sound] i makes sound: " << WHT;
     i->makeSound();
+
+    std::cout << MAG << "[Sound] j makes sound: " << WHT;
     j->makeSound();
-  
+
     delete j;
     delete i;
-  }
 
-  std::cout << "ARRAY OF ANIMALS OBJECTS ->" << std::endl;
-  Animal *animal_arr[4];
-  for (int i = 0; i < 4; i++){
-    if(i % 2 == 0){
-      animal_arr[i] = new Dog();
-      std::cout << "_______" << std::endl;
-    }
-    else{
-      animal_arr[i] = new Cat();
-      std::cout << "_______" << std::endl;
+    //------------------------------
+    // Array of Animals
+    //------------------------------
+    std::cout << YEL << "\n=== Array of Animals Objects ===" << WHT << std::endl;
+    Animal* animal_arr[4];
 
+    // Create animals in array
+    for (int i = 0; i < 4; i++) {
+        if (i % 2 == 0) {
+            animal_arr[i] = new Dog();
+            std::cout << CYN << "[Array] Created Dog at index " << i << WHT << std::endl;
+        } else {
+            animal_arr[i] = new Cat();
+            std::cout << CYN << "[Array] Created Cat at index " << i << WHT<< std::endl;
+        }
     }
-    for(int i = 0; i < 4; i++){
-      animal_arr[i]->makeSound();
-    }
-    std::cout << "-------" << std::endl;
-    for(int i = 0; i < 4; i++){
-      delete animal_arr[i];
-  }
 
-    std::cout << "SHALLOW COPY" <<  std::endl;
+    std::cout << MAG << "\n[Sound] All animals in array make sound:" << WHT << std::endl;
+    for (int i = 0; i < 4; i++) {
+        animal_arr[i]->makeSound();
+    }
+
+    // Delete animals in array
+    std::cout << RED << "\n[Cleanup] Deleting all animals in array:" << WHT << std::endl;
+    for (int i = 0; i < 4; i++) {
+        delete animal_arr[i];
+        std::cout << RED << "[Cleanup] Deleted animal at index " << i << WHT << std::endl;
+    }
+
+    //------------------------------
+    // Shallow / Deep Copy Test
+    //------------------------------
+    std::cout << GRN << "\n=== Shallow / Deep Copy Test ===" << WHT << std::endl;
     Cat a;
-    Cat b = a;
-    std::cout << "_____" << std::endl;
+    std::cout << BLU << "[Original] Cat a created" << DEFAULT << std::endl;
+
+    Cat b = a; // Copy constructor
+    std::cout << BLU << "[Copy] Cat b copied from a" << DEFAULT << std::endl;
+
+    std::cout << MAG << "[Test] Making sounds to verify copies:" << DEFAULT << std::endl;
+    a.makeSound();
+    b.makeSound();
+
+    std::cout << GRN << "==== End of Program ====" << DEFAULT << std::endl;
+
+    return 0;
 }
-return (0);
-}
+

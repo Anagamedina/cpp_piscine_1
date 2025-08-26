@@ -5,10 +5,11 @@
 #                                                     +:+ +:+         +:+      #
 #    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/13 08:32:39 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/26 17:53:32 by anamedin         ###   ########.fr        #
+#    Created: 2025/07/31 13:26:30 by anamedin          #+#    #+#              #
+#    Updated: 2025/08/26 17:49:33 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 # ===========================
 # CONFIGURATION
@@ -16,7 +17,6 @@
 
 # Executable name
 NAME = animal
-
 # Compiler
 CXX = c++
 
@@ -31,7 +31,7 @@ DEP_DIR = deps/
 # SOURCES AND OBJECTS
 # ===========================
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp  Dog.cpp Cat.cpp Brain.cpp AAnimal.cpp
 
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 DEPS = $(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
@@ -69,4 +69,6 @@ re: fclean all
 
 # Include dependencies automatically (headers are handled by -MMD)
 -include $(DEPS)
+
+
 
