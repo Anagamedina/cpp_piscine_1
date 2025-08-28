@@ -15,8 +15,15 @@
 #include 	"FragTrap.hpp"
 #include 	"DiamondTrap.hpp"
 
-int main(void){
+/*
+void pressEnter() {
+	std::cout << "\n--- Press ENTER to continue ---";
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+*/
 
+int main(void)
+{
   	ClapTrap 	ironClap("IronClap");
     ScavTrap 	darkScav("DarkScav");
     FragTrap 	megaFrag("MegaFrag");
@@ -30,7 +37,7 @@ int main(void){
 	ironClap.attack(darkScav.getName());
 	std::cout << std::endl;
 	ironClap.printStatus();
-
+	std::cin.get();
 	// =======================
 	// ScavTrap Section
 	// =======================
@@ -41,6 +48,7 @@ int main(void){
 	
 	darkScav.guardGate();
 	std::cout << std::endl;
+	std::cin.get();
 
 	// =======================
 	// FragTrap Section
@@ -52,6 +60,7 @@ int main(void){
 	megaFrag.printStatus();
 
 	megaFrag.highFiveGuys(); 
+	std::cin.get();
 
 	// =======================
     // DiamondTrap attacks

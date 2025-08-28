@@ -43,9 +43,9 @@ int main(void) {
 
     delete j;
     delete i;
-
-    //------------------------------
-    // Array of Animals
+	std::cin.get();
+	//------------------------------
+	// Array of Animals
     //------------------------------
     std::cout << YEL << "\n=== Array of Animals Objects ===" << WHT << std::endl;
     Animal* animal_arr[4];
@@ -66,28 +66,36 @@ int main(void) {
         animal_arr[i]->makeSound();
     }
 
-    // Delete animals in array
-    std::cout << RED << "\n[Cleanup] Deleting all animals in array:" << WHT << std::endl;
-    for (int i = 0; i < 4; i++) {
-        delete animal_arr[i];
-        std::cout << RED << "[Cleanup] Deleted animal at index " << i << WHT << std::endl;
-    }
+	std::cin.get();
+	//------------------------------
+	// Cleanup
+	//------------------------------
+	std::cout << RED << CYN
+			  << "\n[Cleanup] Deleting all animals in array:"
+			  << CYN << std::endl;
 
-    //------------------------------
+	for (int i = 0; i < 4; i++) {
+		delete animal_arr[i];
+		std::cout << RED << "[Cleanup] Deleted animal at index " << i << CYN << std::endl;
+	}
+
+	std::cin.get(); // Pausa
+	//------------------------------
+	//------------------------------
     // Shallow / Deep Copy Test
     //------------------------------
     std::cout << GRN << "\n=== Shallow / Deep Copy Test ===" << WHT << std::endl;
     Cat a;
-    std::cout << BLU << "[Original] Cat a created" << DEFAULT << std::endl;
+    std::cout << BLU << "[Original] Cat a created" << YEL << std::endl;
 
     Cat b = a; // Copy constructor
-    std::cout << BLU << "[Copy] Cat b copied from a" << DEFAULT << std::endl;
+    std::cout << BLU << "[Copy] Cat b copied from a" << YEL << std::endl;
 
-    std::cout << MAG << "[Test] Making sounds to verify copies:" << DEFAULT << std::endl;
+    std::cout << MAG << "[Test] Making sounds to verify copies:" << YEL << std::endl;
     a.makeSound();
     b.makeSound();
 
-    std::cout << GRN << "==== End of Program ====" << DEFAULT << std::endl;
+    std::cout << GRN << "==== End of Program ====" << YEL << std::endl;
 
     return 0;
 }
