@@ -6,7 +6,7 @@
 #    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 13:26:30 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/29 13:43:27 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/29 21:55:41 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 # ===========================
 
 # Executable name
-NAME = animal
+NAME = interface&recap
 
 # Compiler
 CXX = c++
