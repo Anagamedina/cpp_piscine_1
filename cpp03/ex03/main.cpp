@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:51:07 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 10:59:47 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 10:26:41 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,6 @@
 #include 	"FragTrap.hpp"
 #include 	"DiamondTrap.hpp"
 
-/*
-void pressEnter() {
-	std::cout << "\n--- Press ENTER to continue ---";
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-*/
 
 int main(void)
 {
@@ -37,6 +31,7 @@ int main(void)
 	ironClap.attack(darkScav.getName());
 	std::cout << std::endl;
 	ironClap.printStatus();
+	std::cout << "\n--- Press ENTER to continue ---";
 	std::cin.get();
 	// =======================
 	// ScavTrap Section
@@ -48,6 +43,7 @@ int main(void)
 	
 	darkScav.guardGate();
 	std::cout << std::endl;
+	std::cout << "\n--- Press ENTER to continue ---";
 	std::cin.get();
 
 	// =======================
@@ -60,6 +56,7 @@ int main(void)
 	megaFrag.printStatus();
 
 	megaFrag.highFiveGuys(); 
+	std::cout << "\n--- Press ENTER to continue ---";
 	std::cin.get();
 
 	// =======================

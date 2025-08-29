@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 12:51:20 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/25 16:02:48 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 10:54:03 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,5 @@ FragTrap::~FragTrap(){
 // =======================
 
 void FragTrap::highFiveGuys(){
-	std::cout << "[FragTrap] 🙌 " << getName() << " says: High Five! 🖐️" << std::endl;
+	std::cout << CYN "[FragTrap] " << getName() << " says: High Five! 🖐️" << WHT << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 13:55:19 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/25 17:00:03 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 10:56:13 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,24 @@ ClapTrap::~ClapTrap(){
  }
 
 
+// =======================
+// getters Methods
+// =======================
+std::string ClapTrap::getName(void) const{
+	return _name;
+}
+
+unsigned int ClapTrap::getHitPoints(void) const{
+	return _hitPoints;
+}
+
+unsigned int ClapTrap::getEnergyPoints(void) const{
+	return _energyPoints;
+}
+
+unsigned int ClapTrap::getDamagePoints(void) const{
+	return _attackDamage;
+}
 
 
 // =======================
@@ -94,8 +112,8 @@ void ClapTrap::attack(const std::string& target){
 		return;
 	}
 	_energyPoints--;
-	std::cout << "[ClapTrap] " << _name << " attacks " << target << ", dealing " 
-			  << _attackDamage << " damage! Energy left: " << _energyPoints << std::endl;
+	std::cout << MAG "[ClapTrap] " << _name << " attacks " << target << ", dealing " 
+			  << _attackDamage << " damage! Energy left: " << _energyPoints << WHT << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
@@ -107,7 +125,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 		_hitPoints = 0;
 	else
 		_hitPoints -= amount;
-	std::cout << "[ClapTrap] " << _name << " takes " << amount << " damage! HP left: " << _hitPoints << std::endl;
+	std::cout << MAG "[ClapTrap] " << _name << " takes " << amount << " damage! HP left: " << _hitPoints << WHT << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
@@ -117,9 +135,9 @@ void ClapTrap::beRepaired(unsigned int amount){
 	}
 	_energyPoints--;
 	_hitPoints += amount;
-	std::cout << GRN << "[ClapTrap] " << _name << " repaired by " << amount 
+	std::cout << MAG "[ClapTrap] " << _name << " repaired by " << amount 
 			  << " points! Current HP: " << _hitPoints 
-			  << ", Energy left: " << _energyPoints << WHT << std::endl;
+			  << ", Energy left: " << _energyPoints  <<  WHT << std::endl;
 }
 
 void ClapTrap::printStatus(void) const{

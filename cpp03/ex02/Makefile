@@ -6,7 +6,7 @@
 #    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/11 15:52:53 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/25 17:05:32 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/29 11:02:04 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ NAME = clap
 CXX = c++
 
 # Compilation flags
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g -fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g #-fsanitize=address
 
 # Directories
 OBJ_DIR = objs/

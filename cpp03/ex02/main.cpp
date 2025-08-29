@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:51:07 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 09:39:42 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 10:18:06 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ int main(void){
 	ironClap.printStatus();
 	std::cout << std::endl;
 
+	std::cout << "\n--- Press ENTER to continue ---";
+	std::cin.get();
+
 	// =======================
 	// ScavTrap Section
 	// =======================
@@ -52,6 +55,9 @@ int main(void){
 
 	darkScav.guardGate();
 	darkScav.printStatus();
+
+	std::cout << "\n--- Press ENTER to continue ---";
+	std::cin.get();
 
 	std::cout << std::endl;
 
