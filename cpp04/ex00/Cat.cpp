@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 13:49:57 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 17:57:59 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 12:43:02 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ Cat& Cat::operator=(const Cat& other) {
 // Member Function: makeSound
 //------------------------------
 void Cat::makeSound() const { 
-    std::cout << "[Sound] " << _type << " says: Meeeeow!!" << std::endl;
+    std::cout << "[Cat Sound] " << _type << " says: Meeeeow!!" << std::endl;
 }
 

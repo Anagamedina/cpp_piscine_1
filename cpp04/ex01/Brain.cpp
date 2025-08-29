@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:15:45 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 18:12:22 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 12:49:19 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,22 @@ Brain& Brain::operator=(const Brain& other) {
 //------------------------------
 Brain::~Brain() {
     std::cout << "[Destructor] Brain destroyed" << std::endl;
+}
+
+
+//  Setter
+void Brain::setIdea(int index, const std::string& idea) {
+    if (index >= 0 && index < 100) {
+        _ideas[index] = idea;
+    } else {
+        std::cerr << "Index out of range (0-99)\n";
+    }
+}
+
+// Getter
+std::string Brain::getIdea(int index) const {
+    if (index >= 0 && index < 100) {
+        return _ideas[index];
+    }
+    return "Invalid index";
 }

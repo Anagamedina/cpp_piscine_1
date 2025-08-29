@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:12:14 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/14 09:15:35 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 12:59:08 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Brain {
     Brain(const Brain& other);
     Brain& operator=(const Brain& other);
 
+   void setIdea(int index, const std::string& idea);
+   std::string getIdea(int index) const;
 };
 
 #endif

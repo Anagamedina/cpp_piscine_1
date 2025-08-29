@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 12:34:35 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 18:19:28 by anamedin         ###   ########.fr       */
+/*   Created: 2025/08/29 13:01:38 by anamedin          #+#    #+#             */
+/*   Updated: 2025/08/29 13:09:19 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,25 @@ int main(void) {
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    std::cout << BLU << "[Type] j is a " << j->getType() << WHT << std::endl;
-    std::cout << BLU << "[Type] i is a " << i->getType() << WHT << std::endl;
+    std::cout << BLU << "[Type] j is a " << j->getType() << YEL << std::endl;
+    std::cout << BLU << "[Type] i is a " << i->getType() << YEL << std::endl;
 
-    std::cout << MAG << "[Sound] i makes sound: " << WHT;
+    std::cout << MAG << "[Sound] i makes sound: " << YEL;
     i->makeSound();
 
-    std::cout << MAG << "[Sound] j makes sound: " << WHT;
+    std::cout << MAG << "[Sound] j makes sound: " << YEL;
     j->makeSound();
+
+    std::cout << WHT "\n--- Press ENTER to continue ---";
+	std::cin.get();
 
     delete j;
     delete i;
-	std::cin.get();
+
 	//------------------------------
 	// Array of Animals
     //------------------------------
-    std::cout << YEL << "\n=== Array of Animals Objects ===" << WHT << std::endl;
+    std::cout << GRN << "\n=== Array of Animals Objects ===" << WHT << std::endl;
     Animal* animal_arr[4];
 
     // Create animals in array
@@ -60,43 +63,60 @@ int main(void) {
             std::cout << CYN << "[Array] Created Cat at index " << i << WHT<< std::endl;
         }
     }
-
-    std::cout << MAG << "\n[Sound] All animals in array make sound:" << WHT << std::endl;
+    std::cout << "\n--- Press ENTER to continue ---";
+	std::cin.get();
+    std::cout << GRN << "\n[Sound] All animals in array make sound:" << YEL << std::endl;
     for (int i = 0; i < 4; i++) {
         animal_arr[i]->makeSound();
     }
 
-	std::cin.get();
 	//------------------------------
 	// Cleanup
 	//------------------------------
-	std::cout << RED << CYN
-			  << "\n[Cleanup] Deleting all animals in array:"
-			  << CYN << std::endl;
+	std::cout << GRN "\n[Cleanup] Deleting all animals in array:"
+			  << WHT << std::endl;
 
 	for (int i = 0; i < 4; i++) {
 		delete animal_arr[i];
-		std::cout << RED << "[Cleanup] Deleted animal at index " << i << CYN << std::endl;
+		std::cout << CYN << "[Cleanup] Deleted animal at index " << i << WHT << std::endl;
 	}
 
-	std::cin.get(); // Pausa
+	std::cout << "\n--- Press ENTER to continue ---";
+	std::cin.get();
 	//------------------------------
 	//------------------------------
     // Shallow / Deep Copy Test
     //------------------------------
-    std::cout << GRN << "\n=== Shallow / Deep Copy Test ===" << WHT << std::endl;
-    Cat a;
-    std::cout << BLU << "[Original] Cat a created" << YEL << std::endl;
+    std::cout << GRN << "\n=== Deep Copy Test ===" << WHT << std::endl;\
+    
+    Cat     cat1;
+    //std::cout << WHT << "[Original] Cat a created" << WHT << std::endl;
+    cat1.setIdea(0, "Catch a mouse");
+    cat1.setIdea(1, "Take a nap");
 
-    Cat b = a; // Copy constructor
+    std::cout << "Cat1 Idea[0]: " << cat1.getIdea(0) << std::endl;
+    std::cout << "Cat1 Idea[1]: " << cat1.getIdea(1) << std::endl;
+    
+    //deep copy
+    Cat cat2 = cat1; 
     std::cout << BLU << "[Copy] Cat b copied from a" << YEL << std::endl;
+    std::cout << "Cat2 Idea[0]: " << cat2.getIdea(0) << std::endl;
+    std::cout << "Cat2 Idea[1]: " << cat2.getIdea(1) << std::endl;
 
-    std::cout << MAG << "[Test] Making sounds to verify copies:" << YEL << std::endl;
-    a.makeSound();
-    b.makeSound();
+    std::cout << "\nBefore modifying Cat2:\n";
+    cat2.setIdea(0, "Hunt Birds");
+    std::cout << "\nAfter modifying Cat2:\n";
+    std::cout << "Cat2 Idea[0]: " << cat2.getIdea(0) << std::endl;
+    std::cout << "Cat2 Idea[1]: " << cat2.getIdea(1) << std::endl;
 
-    std::cout << GRN << "==== End of Program ====" << YEL << std::endl;
+    std::cout << "\nBrain addresses:\n";
+    cat1.printBrainAddress();
+    cat2.printBrainAddress();
+
+    std::cout << "\n--- Press ENTER to continue ---";
+	std::cin.get();
+
+    std::cout << GRN << "==== End of Program ====" << WHT << std::endl;
 
     return 0;
 }
-

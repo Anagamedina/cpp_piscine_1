@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 14:11:36 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 18:13:11 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 12:38:34 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain)) {
 //------------------------------
 Dog& Dog::operator=(const Dog& other) {
     if (this != &other) {  
-        Animal::operator=(other);      // Copia los datos de la clase base
-        *_brain = *other._brain;       // Copia el contenido del brain
+        Animal::operator=(other);   
+        *_brain = *other._brain;    
     }
     std::cout << "[Assignment Operator] Dog assigned: " << _type << std::endl;
     return *this;
@@ -50,5 +50,5 @@ Dog& Dog::operator=(const Dog& other) {
 // Member Function: makeSound
 //------------------------------
 void Dog::makeSound() const { 
-    std::cout << "[Sound] " << _type << " says: Wooof!" << std::endl;
+    std::cout << "[Dog Sound] " << _type << " says: Wooof!" << std::endl;
 }

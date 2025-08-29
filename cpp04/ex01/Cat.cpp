@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 13:49:57 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/26 18:11:46 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 13:05:09 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ Cat::Cat() : Animal(), _brain(new Brain()) {
 // Destructor
 //------------------------------
 Cat::~Cat() {
-    // Nota: Si estás usando new para _brain, recuerda descomentar delete para evitar memory leak
-    // delete _brain;
+    delete _brain;
     std::cout << "[Destructor] Cat destroyed: " << _type << std::endl;
 }
 
@@ -40,8 +39,8 @@ Cat::Cat(const Cat& other) : Animal(other), _brain(new Brain(*other._brain)) {
 //------------------------------
 Cat& Cat::operator=(const Cat& other) {
     if (this != &other) {
-        Animal::operator=(other);      // Copia los datos de la clase base
-        *_brain = *other._brain;       // Copia el contenido del brain
+        Animal::operator=(other); 
+        *_brain = *other._brain;      
     }
     std::cout << "[Assignment Operator] Cat assigned: " << _type << std::endl;
     return *this;
@@ -51,6 +50,18 @@ Cat& Cat::operator=(const Cat& other) {
 // Member Function: makeSound
 //------------------------------
 void Cat::makeSound() const { 
-    std::cout << "[Sound] " << _type << " says: Meeeeow!!" << std::endl;
+    std::cout << "[CAT Sound] " << _type << " says: Meeeeow!!" << std::endl;
 }
 
+void Cat::setIdea(int index, const std::string& idea) {
+    this->_brain->setIdea(index, idea);
+}
+
+std::string Cat::getIdea(int index) const {
+    return this->_brain->getIdea(index);
+}
+
+// Debug: ver dirección del Brain
+void Cat::printBrainAddress() const {
+    std::cout << "Brain address: " << this->_brain << std::endl;
+}

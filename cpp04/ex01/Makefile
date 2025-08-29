@@ -6,7 +6,7 @@
 #    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/13 08:32:39 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/26 17:54:13 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/29 13:14:07 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ NAME = animal
 CXX = c++
 
 # Compilation flags
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g #-fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g -fsanitize=address
 
 # Directories
 OBJ_DIR = objs/

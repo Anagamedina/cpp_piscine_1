@@ -6,7 +6,7 @@
 /*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 13:51:05 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/14 11:06:15 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/08/29 13:03:47 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ class Cat : public Animal {
     Cat& operator=(const Cat& other);
 
     void makeSound() const;
+    void setIdea(int index, const std::string& idea);
+    std::string getIdea(int index) const;
+
+    void printBrainAddress() const;
 };
 
 #endif
