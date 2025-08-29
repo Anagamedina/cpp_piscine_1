@@ -6,7 +6,7 @@
 #    By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 13:26:30 by anamedin          #+#    #+#              #
-#    Updated: 2025/08/26 17:54:35 by anamedin         ###   ########.fr        #
+#    Updated: 2025/08/29 13:43:27 by anamedin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ NAME = animal
 CXX = c++
 
 # Compilation flags
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g #-fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g -fsanitize=address
 
 # Directories
 OBJ_DIR = objs/
@@ -32,7 +32,7 @@ DEP_DIR = deps/
 # SOURCES AND OBJECTS
 # ===========================
 
-SRCS = 
+SRCS = main.cpp 
 
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 DEPS = $(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
