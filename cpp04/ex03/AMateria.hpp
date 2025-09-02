@@ -21,7 +21,7 @@ class ICharacter;	//forward declaration
 class AMateria
 {
 protected:
-	std::string type_;
+	std::string _type;
 
 public:
 	AMateria();

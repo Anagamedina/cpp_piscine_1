@@ -24,3 +24,19 @@ add_executable(deepCopy cpp04/ex01/main.cpp
         cpp04/ex01/Brain.cpp
         cpp04/ex01/Brain.hpp
 )
+
+add_executable(Interfaces cpp04/ex03/main.cpp
+        cpp04/ex03/AMateria.cpp
+        cpp04/ex03/AMateria.hpp
+        cpp04/ex03/Character.cpp
+        cpp04/ex03/Character.hpp
+        cpp04/ex03/Cure.cpp
+        cpp04/ex03/Cure.hpp
+        cpp04/ex03/Ice.cpp
+        cpp04/ex03/Ice.hpp
+        cpp04/ex03/ICharacter.hpp
+        cpp04/ex03/IMateriaSource.hpp
+        cpp04/ex03/MateriaSource.cpp
+        cpp04/ex03/MateriaSource.hpp
+
+)

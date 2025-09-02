@@ -19,7 +19,8 @@ class Ice : public AMateria
 {
 public:
 	Ice();
-	Ice(const Ice& other);
+	Ice(std::string const &type);
+	Ice(Ice const &other);
 	Ice& operator=(const Ice& other);
 	~Ice();
 

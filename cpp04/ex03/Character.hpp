@@ -1,13 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 18:10:49 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/30 18:10:50 by anamedin         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
+
+class Character : public ICharacter
+{
+	private:
+	std::string _name;
+	AMateria* _inventory[4];
 
 
+	public:
+	Character();
+	Character(std::string const& name);
+	Character(const Character& other);
+	Character& operator=(const Character& other);
+	~Character();
+
+	const std::string& getName() const;
+	void equip(AMateria* m);
+	void unequip(int idx);
+	void use(int idx, ICharacter& target);
+};
+
+#endif

@@ -16,7 +16,7 @@
 # ===========================
 
 # Executable name
-NAME = interface&recap
+NAME = interfaces
 
 # Compiler
 CXX = c++
