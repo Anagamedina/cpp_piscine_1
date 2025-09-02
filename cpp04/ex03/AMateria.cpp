@@ -14,21 +14,20 @@
 // =======================
 // Constructors
 // =======================
-AMateria::AMateria(): _type("Default")
+AMateria::AMateria() : _type("Default")
 {
 	std::cout << "[AMateria] default contructor called" << std::endl;
 }
 
 AMateria::AMateria(std::string const& type) : _type(type)
 {
-	std::cout  << "[AMateria] constructor with type called."
+	std::cout << "[AMateria] constructor with type called."
 		<< std::endl;
-
 }
 
-AMateria::AMateria(const AMateria& other): _type(other._type){}
-
-
+AMateria::AMateria(const AMateria& other) : _type(other._type)
+{
+}
 
 
 // =======================
@@ -41,10 +40,13 @@ AMateria& AMateria::operator=(const AMateria& other)
 	std::cout << "[AMateria copy] assignment operator called." << std::endl;
 	return (*this);
 }
+
 // =======================
 // Destructor
 // =======================
-AMateria::~AMateria(){}
+AMateria::~AMateria()
+{
+}
 
 // =======================
 // Mandatory member functions

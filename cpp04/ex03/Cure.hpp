@@ -20,11 +20,11 @@ class Cure : public AMateria
 public:
 	Cure();
 	Cure(const Cure& type);
-	Cure(std::string const &type);
+	Cure(std::string const& type);
 	Cure& operator=(const Cure& other);
 	~Cure();
 
-	AMateria* clone()const;
+	AMateria* clone() const;
 	void use(ICharacter& target);
 };
 

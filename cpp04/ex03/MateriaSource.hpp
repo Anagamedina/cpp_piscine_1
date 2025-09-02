@@ -1,4 +1,3 @@
-
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
@@ -12,8 +11,7 @@
 // ==========================================
 class MateriaSource : public IMateriaSource
 {
-
-	private:
+private:
 	// Inventory to hold up to 4 learned Materias.
 	AMateria* _inventory[4];
 

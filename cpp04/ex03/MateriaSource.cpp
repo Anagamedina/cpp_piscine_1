@@ -35,7 +35,8 @@ void MateriaSource::copyInventory(const MateriaSource& other)
 		if (other._inventory[i])
 		{
 			_inventory[i] = other._inventory[i]->clone();
-			std::cout << "[MateriaSource] Cloned materia from slot " << i << std::endl;
+			std::cout << "[MateriaSource] Cloned materia from slot " << i <<
+				std::endl;
 		}
 		else
 		{
@@ -99,11 +100,12 @@ void MateriaSource::learnMateria(AMateria* m)
 		{
 			_inventory[i] = m;
 			std::cout << "[MateriaSource] Learned materia of type '"
-					  << m->getType() << "' in slot " << i << std::endl;
+				<< m->getType() << "' in slot " << i << std::endl;
 			return;
 		}
 	}
-	std::cout << "[MateriaSource] Inventory full, cannot learn new materia" << std::endl;
+	std::cout << "[MateriaSource] Inventory full, cannot learn new materia" <<
+		std::endl;
 }
 
 // Creates a new Materia by cloning one of the learned ones.
@@ -115,12 +117,11 @@ AMateria* MateriaSource::createMateria(std::string const& type)
 		if (_inventory[i] && _inventory[i]->getType() == type)
 		{
 			std::cout << "[MateriaSource] Created new materia of type '"
-					  << type << "' from slot " << i << std::endl;
+				<< type << "' from slot " << i << std::endl;
 			return _inventory[i]->clone();
 		}
 	}
-	std::cout << "[MateriaSource] Unknown materia type: '" << type << "'" << std::endl;
+	std::cout << "[MateriaSource] Unknown materia type: '" << type << "'" <<
+		std::endl;
 	return NULL;
 }
-
-

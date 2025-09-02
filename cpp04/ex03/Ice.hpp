@@ -19,14 +19,13 @@ class Ice : public AMateria
 {
 public:
 	Ice();
-	Ice(std::string const &type);
-	Ice(Ice const &other);
+	Ice(std::string const& type);
+	Ice(Ice const& other);
 	Ice& operator=(const Ice& other);
 	~Ice();
 
 	AMateria* clone() const;
 	void use(ICharacter& target);
-	
 };
 
-#endif 
+#endif

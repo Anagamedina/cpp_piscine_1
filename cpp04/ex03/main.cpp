@@ -17,13 +17,15 @@
 
 int main()
 {
-	std::cout << "=== TEST: Create MateriaSource and learn materias ===\n" << std::endl;
+	std::cout << "=== TEST: Create MateriaSource and learn materias ===\n" <<
+		std::endl;
 
 	MateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
-	std::cout << "\n=== TEST: Create Character and equip materias ===\n" << std::endl;
+	std::cout << "\n=== TEST: Create Character and equip materias ===\n" <<
+		std::endl;
 
 	Character* alice = new Character("Alice");
 	Character* bob = new Character("Bob");
@@ -56,5 +58,3 @@ int main()
 
 	return 0;
 }
-
-

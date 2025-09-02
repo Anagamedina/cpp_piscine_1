@@ -28,7 +28,9 @@ class IMateriaSource
 public:
 	// Virtual destructor ensures proper cleanup
 	// of derived classes.
-	virtual ~IMateriaSource() {}
+	virtual ~IMateriaSource()
+	{
+	}
 
 	// Stores a copy of the given Materia in memory
 	// so it can be cloned later.
@@ -40,4 +42,3 @@ public:
 };
 
 #endif
-

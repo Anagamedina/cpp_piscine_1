@@ -16,7 +16,7 @@
 #include <iostream>
 #include <string>
 
-class ICharacter;	//forward declaration
+class ICharacter; //forward declaration
 
 class AMateria
 {
@@ -25,13 +25,13 @@ protected:
 
 public:
 	AMateria();
-	AMateria(std::string const &type);
+	AMateria(std::string const& type);
 	AMateria(const AMateria& other);
 	AMateria& operator=(const AMateria& other);
 	virtual ~AMateria();
 
-	virtual AMateria* clone() const = 0;	//pure functions (abstract class)
-	virtual void use(ICharacter& target);	// default or override optional
+	virtual AMateria* clone() const = 0; //pure functions (abstract class)
+	virtual void use(ICharacter& target); // default or override optional
 
 	std::string const& getType() const; //Returns the materia type
 };

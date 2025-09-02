@@ -5,15 +5,14 @@
 
 class Character : public ICharacter
 {
-	private:
+private:
 	std::string _name;
 	AMateria* _inventory[4];
 
 	void copyInventory(const Character& other);
 	void clearInventory();
 
-
-	public:
+public:
 	Character();
 	Character(std::string const& name);
 	Character(const Character& other);

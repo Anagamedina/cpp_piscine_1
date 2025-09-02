@@ -26,7 +26,9 @@ class ICharacter
 public:
 	// Virtual destructor is required to ensure
 	// proper cleanup of derived classes.
-	virtual ~ICharacter() {}
+	virtual ~ICharacter()
+	{
+	}
 
 	// Returns the name of the character.
 	virtual std::string const& getName() const = 0;
