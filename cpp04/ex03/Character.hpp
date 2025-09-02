@@ -9,6 +9,9 @@ class Character : public ICharacter
 	std::string _name;
 	AMateria* _inventory[4];
 
+	void copyInventory(const Character& other);
+	void clearInventory();
+
 
 	public:
 	Character();

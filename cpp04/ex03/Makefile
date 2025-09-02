@@ -32,7 +32,7 @@ DEP_DIR = deps/
 # SOURCES AND OBJECTS
 # ===========================
 
-SRCS = main.cpp 
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 DEPS = $(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))

@@ -15,12 +15,29 @@
 # define IMATERIASOURCE_HPP
 
 #include "AMateria.hpp"
+
+// ==========================================
+// Interface for Materia sources.
+// Any class that derives from IMateriaSource
+// must implement the following behaviors:
+// - Learn new Materias.
+// - Create Materias based on their type.
+// ==========================================
 class IMateriaSource
 {
 public:
-  virtual ~IMateriaSource() {}
-  virtual void learnMateria(AMateria*) = 0;
-  virtual AMateria* createMateria(std::string const & type) = 0;
+	// Virtual destructor ensures proper cleanup
+	// of derived classes.
+	virtual ~IMateriaSource() {}
+
+	// Stores a copy of the given Materia in memory
+	// so it can be cloned later.
+	virtual void learnMateria(AMateria* m) = 0;
+
+	// Creates a new Materia based on the given type.
+	// Returns nullptr if the type is unknown.
+	virtual AMateria* createMateria(std::string const& type) = 0;
 };
 
 #endif
+
