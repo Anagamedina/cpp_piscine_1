@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 18:07:25 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/30 18:07:44 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/09/03 16:38:11 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,12 @@ AMateria::~AMateria()
 // Mandatory member functions
 // =======================
 
+//empty, only for override
 void AMateria::use(ICharacter& target)
 {
 	(void)target;
 }
-
+//returns materia type
 std::string const& AMateria::getType() const
 {
 	return _type;

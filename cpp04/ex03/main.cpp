@@ -3,58 +3,87 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anamedin <anamedin@student.42barcel>       +#+  +:+       +#+        */
+/*   By: anamedin <anamedin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 18:11:22 by anamedin          #+#    #+#             */
-/*   Updated: 2025/08/30 18:11:25 by anamedin         ###   ########.fr       */
+/*   Updated: 2025/09/03 18:48:37 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
+#include "MateriaSource.hpp"
 #include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-#include "MateriaSource.hpp"
-#include <iostream>
 
-int main()
+// ANSI color codes
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+
+
+
+void overflowTest()
 {
-	std::cout << "=== TEST: Create MateriaSource and learn materias ===\n" <<
-		std::endl;
+	std::cout << CYAN << "\n=== OVERFLOW TEST: Equip more materias than allowed ===\n" << RESET;
 
-	MateriaSource* src = new MateriaSource();
+	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
-	std::cout << "\n=== TEST: Create Character and equip materias ===\n" <<
-		std::endl;
+	ICharacter* Alice = new Character("Alice");
 
-	Character* alice = new Character("Alice");
-	Character* bob = new Character("Bob");
+	std::cout << YELLOW << "\n-- Equipping materias --\n" << RESET;
+	Alice->equip(src->createMateria("ice"));
+	Alice->equip(src->createMateria("cure"));
+	Alice->equip(src->createMateria("ice"));
+	Alice->equip(src->createMateria("cure"));
 
-	// Create materias from the source and equip them
-	AMateria* ice1 = src->createMateria("ice");
-	AMateria* cure1 = src->createMateria("cure");
+	std::cout << RED << "\n-- Trying to equip one more materia (should fail if limit is 4) --\n" << RESET;
+	AMateria* materiaExtra = src->createMateria("ice");
+	Alice->equip(materiaExtra);
 
-	alice->equip(ice1);
-	alice->equip(cure1);
-
-	std::cout << "\n=== TEST: Alice uses materias on Bob ===\n" << std::endl;
-	alice->use(0, *bob); // Ice
-	alice->use(1, *bob); // Cure
-
-	std::cout << "\n=== TEST: Copying Character ===\n" << std::endl;
-	Character* aliceCopy = new Character(*alice);
-	aliceCopy->use(0, *bob);
-	aliceCopy->use(1, *bob);
-
-	std::cout << "\n=== TEST: Unequip materias ===\n" << std::endl;
-	alice->unequip(0);
-	alice->use(0, *bob); // nothing should happen
-
-	std::cout << "\n=== TEST: Cleanup ===\n" << std::endl;
+	delete materiaExtra;
+	delete Alice;
 	delete src;
-	delete alice;
-	delete bob;
-	delete aliceCopy;
+}
 
-	return 0;
+int main()
+{
+	std::cout << CYAN << "=== TEST: Create MateriaSource and learn materias ===\n" << RESET;
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	
+	std::cout << CYAN << "\n=== TEST: Create Character and equip materias ===\n" << RESET;
+	ICharacter* Alice = new Character("Alice");
+	AMateria* tmp;
+
+	std::cout << YELLOW << "-- Equipping Ice --\n" << RESET;
+	tmp = src->createMateria("ice");
+	Alice->equip(tmp);
+
+	std::cout << YELLOW << "-- Equipping Cure --\n" << RESET;
+	tmp = src->createMateria("cure");
+	Alice->equip(tmp);
+
+	std::cout << CYAN << "\n=== TEST: Create another Character to use materias on ===\n" << RESET;
+	ICharacter* bob = new Character("Bob");
+
+	std::cout << GREEN << "-- Alice uses Ice on Bob --\n" << RESET;
+	Alice->use(0, *bob);
+
+	std::cout << GREEN << "-- Alice uses Cure on Bob --\n" << RESET;
+	Alice->use(1, *bob);
+
+	delete bob;
+	delete Alice;
+	delete src;
+	//overflowTest();
+	
+	std::cout << MAGENTA << "\n=== ALL TESTS COMPLETED ===\n" << RESET;
 }

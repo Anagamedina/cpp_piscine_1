@@ -1,5 +1,4 @@
 #include "Ice.hpp"
-
 #include "ICharacter.hpp"
 
 
@@ -29,7 +28,7 @@ Ice& Ice::operator=(const Ice& other)
 	std::cout << "[Ice] Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		AMateria::operator=(other); // delega en la clase base
+		AMateria::operator=(other); 
 	}
 	return *this;
 }
@@ -58,6 +57,6 @@ AMateria* Ice::clone() const
 // use(): applies the Ice effect on the target character
 void Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at "
-		<< target.getName() << " *" << std::endl;
+	std::cout << GREEN "* shoots an ice bolt at "
+		<< target.getName() << " *" << RESET <<  std::endl;
 }
