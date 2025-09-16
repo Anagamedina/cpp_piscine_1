@@ -1,5 +1,7 @@
 # 📘 Piscinas C++ – 42 Barcelona
 [![wakatime](https://wakatime.com/badge/user/640df229-0fc5-4d67-92ba-90084661c6d4/project/4e87dcd9-48ea-4e2c-8699-6dd9acda4429.svg)](https://wakatime.com/badge/user/640df229-0fc5-4d67-92ba-90084661c6d4/project/4e87dcd9-48ea-4e2c-8699-6dd9acda4429)
+
+
 Este repositorio contiene mis ejercicios y apuntes personales de la piscina de C++ en [42 Barcelona](https://42barcelona.com/).
 
 Incluye los módulos:
