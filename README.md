@@ -1,217 +1,182 @@
-# 📘 Piscinas C++ – 42 Barcelona
+# 📘 C++ Piscine – 42 Barcelona
 [![wakatime](https://wakatime.com/badge/user/640df229-0fc5-4d67-92ba-90084661c6d4/project/4e87dcd9-48ea-4e2c-8699-6dd9acda4429.svg)](https://wakatime.com/badge/user/640df229-0fc5-4d67-92ba-90084661c6d4/project/4e87dcd9-48ea-4e2c-8699-6dd9acda4429)
-
 
 Este repositorio contiene mis ejercicios y apuntes personales de la piscina de C++ en [42 Barcelona](https://42barcelona.com/).
 
-Incluye los módulos:
+## 📚 Módulos del Proyecto
 
-- `cpp00` – Conceptos básicos y Phonebook  
-- `cpp01` – Punteros, clases y composición
-- `cpp02` – Sobrecarga del operador 
+| Módulo | Descripción | Conceptos Clave | Estado |
+|--------|-------------|-----------------|--------|
+| **[cpp00](cpp00/README.md)** | Conceptos básicos y Phonebook | Clases, encapsulación, arrays estáticos | ✅ Completo |
+| **[cpp01](cpp01/README.md)** | Punteros, clases y composición | Punteros, referencias, memoria dinámica | ✅ Completo |
+| **[cpp02](cpp02/README.md)** | Sobrecarga del operador | Operadores, clases canónicas, Fixed Point | ✅ Completo |
+| **[cpp03](cpp03/README.md)** | Herencia y polimorfismo | Herencia, virtual, Diamond Problem | ✅ Completo |
+| **[cpp04](cpp04/README.md)** | Interfaces y herencia virtual | Clases abstractas, interfaces, deep copy | ✅ Completo |
 
----
+## 🎯 Objetivos del Proyecto
 
-## 📦 cpp00 – Módulo básico
+Este proyecto de piscina C++ está diseñado para enseñar los conceptos fundamentales de programación orientada a objetos en C++:
 
-### 📦 ex00 – First contact with C++
+- **Encapsulación**: Ocultar datos internos y exponer interfaces limpias
+- **Herencia**: Reutilizar código y crear jerarquías de clases
+- **Polimorfismo**: Comportamiento dinámico basado en tipos
+- **Gestión de memoria**: Punteros, referencias, new/delete
+- **Sobrecarga de operadores**: Personalizar el comportamiento de operadores
+- **Clases abstractas**: Definir interfaces y contratos
 
-#### 🎯 Objetivo:
-- Familiarizarse con el entorno C++ básico y la compilación con `clang++`.
-- Escribir el clásico programa `Hello World!`.
+## 🛠️ Tecnologías Utilizadas
 
-#### 🧠 Conceptos clave:
-- Uso de `std::cout` y `std::endl`.
-- Compilación y ejecución de programas simples.
-- Introducción a las buenas prácticas en C++.
+- **C++98/03**: Estándar utilizado en 42
+- **Makefile**: Sistema de compilación
+- **CMake**: Sistema de construcción alternativo
+- **Git**: Control de versiones
+- **Valgrind**: Detección de memory leaks
 
----
+## 📁 Estructura del Proyecto
 
-### 📦 ex01 – Phonebook
+```
+cpp_piscine_1/
+├── cpp00/          # Conceptos básicos
+├── cpp01/          # Punteros y memoria
+├── cpp02/          # Sobrecarga de operadores
+├── cpp03/          # Herencia y polimorfismo
+├── cpp04/          # Interfaces y herencia virtual
+├── assets/         # Diagramas y recursos
+├── structs/        # Ejemplos de estructuras
+└── teoria/         # Material teórico
+```
 
-#### 🎯 Objetivo:
-- Implementar una agenda telefónica básica en C++.
-- Manejar la entrada del usuario y almacenar contactos.
+## 🚀 Cómo Compilar y Ejecutar
 
-#### 🧠 Conceptos clave:
-- Uso de clases para representar un contacto.
-- Gestión de arrays estáticos o dinámicos de objetos.
-- Métodos para añadir, buscar y mostrar contactos.
-- Validación y control de entradas del usuario.
+Cada módulo tiene su propio sistema de compilación. Consulta el README individual de cada módulo para instrucciones específicas.
 
-![Diagrama UML](./assets/Phonebook-Page-1.drawio.png)
+### Compilación General
+```bash
+# Para compilar todos los módulos
+make -f Makefile_pro
 
----
+# Para compilar un módulo específico
+cd cpp00/ex00 && make
+```
 
-## 📦 cpp01 – Módulo avanzado
+## 📊 Diagramas y Recursos
 
-### 📦 ex00 – Pointers and References
+- **Diagramas UML**: Disponibles en la carpeta `assets/`
+- **Diagramas Mermaid**: Incluidos en cada README individual
+- **Ejemplos de código**: Documentados con comentarios detallados
 
-#### 🎯 Objetivo:
-- Entender la diferencia entre punteros (`*`) y referencias (`&`) en C++.
-- Ver cómo acceden a la misma dirección de memoria.
+### 🏗️ Arquitectura General del Proyecto
 
-#### 🧠 Conceptos clave:
-- Un **puntero** puede cambiar y puede ser `nullptr`.
-- Una **referencia** debe estar inicializada y no puede cambiar de objeto.
-- Ambas permiten modificar el valor original al que apuntan.
+```mermaid
+graph TD
+    A[C++ Piscine Project] --> B[cpp00 - Fundamentos]
+    A --> C[cpp01 - Memoria y Punteros]
+    A --> D[cpp02 - Sobrecarga de Operadores]
+    A --> E[cpp03 - Herencia y Polimorfismo]
+    A --> F[cpp04 - Interfaces y Herencia Virtual]
+    
+    B --> B1[ex00 - Megaphone]
+    B --> B2[ex01 - Phonebook]
+    
+    C --> C1[ex00 - Punteros y Referencias]
+    C --> C2[ex01 - Zombie Horde]
+    C --> C3[ex02 - Human vs Weapon]
+    C --> C4[ex03 - Sed]
+    C --> C5[ex04 - Harl]
+    
+    D --> D1[ex00 - Clase Fixed]
+    D --> D2[ex01 - Operadores Aritméticos]
+    D --> D3[ex02 - Incremento/Decremento]
+    D --> D4[ex03 - Pruebas]
+    
+    E --> E1[ex00 - ClapTrap]
+    E --> E2[ex01 - ScavTrap]
+    E --> E3[ex02 - FragTrap]
+    E --> E4[ex03 - DiamondTrap]
+    
+    F --> F1[ex00 - Animal Base]
+    F --> F2[ex01 - Deep Copy]
+    F --> F3[ex02 - Abstract Animal]
+    F --> F4[ex03 - Materia System]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#f1f8e9
+```
 
----
+### 🔄 Progresión de Conceptos
 
-### 📦 ex01 – Zombie class
+```mermaid
+flowchart LR
+    A[Conceptos Básicos<br/>cpp00] --> B[Memoria y Punteros<br/>cpp01]
+    B --> C[Sobrecarga de Operadores<br/>cpp02]
+    C --> D[Herencia y Polimorfismo<br/>cpp03]
+    D --> E[Interfaces y Herencia Virtual<br/>cpp04]
+    
+    A1[Clases<br/>Encapsulación] --> A
+    B1[Punteros<br/>Referencias<br/>Memoria Dinámica] --> B
+    C1[Operadores<br/>Clases Canónicas<br/>Fixed Point] --> C
+    D1[Herencia<br/>Polimorfismo<br/>Diamond Problem] --> D
+    E1[Clases Abstractas<br/>Interfaces<br/>Deep Copy] --> E
+    
+    style A fill:#f3e5f5
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#fce4ec
+    style E fill:#f1f8e9
+```
 
-#### 🎯 Objetivo:
-- Practicar el uso de clases, memoria dinámica y funciones miembro.
+## 🎓 Conceptos Aprendidos
 
-#### 🧠 Conceptos clave:
-- Crear objetos en el **stack** y en el **heap** (`new`, `delete`).
-- Implementar constructores, métodos (`announce`) y destructores.
-- Importancia del destructor para liberar memoria dinámica.
+### cpp00 - Fundamentos
+- Sintaxis básica de C++
+- Clases y objetos
+- Encapsulación
+- Arrays estáticos
 
-#### ✔️ Buenas prácticas:
-- Si usas `new`, asegúrate de usar `delete`.
-- El destructor debe anunciar la destrucción del objeto (para seguimiento).
+### cpp01 - Memoria y Punteros
+- Gestión de memoria dinámica
+- Punteros vs referencias
+- Constructores y destructores
+- Composición de clases
 
-![Diagrama UML](./assets/ZombieHorde.drawio.png)
+### cpp02 - Operadores
+- Sobrecarga de operadores
+- Clases canónicas
+- Fixed Point Arithmetic
+- Operadores de comparación
 
----
+### cpp03 - Herencia
+- Herencia simple y múltiple
+- Polimorfismo
+- Funciones virtuales
+- Diamond Problem
 
-### 📦 ex02 – Zombie Horde
+### cpp04 - Interfaces
+- Clases abstractas
+- Interfaces puras
+- Deep vs Shallow Copy
+- Virtual Inheritance
 
-#### 🎯 Objetivo:
-- Crear una horda de zombies en memoria dinámica.
-- Gestionar un array dinámico de objetos.
+## 📝 Notas de Desarrollo
 
-#### 🧠 Conceptos clave:
-- Uso de arrays dinámicos con punteros.
-- Gestión de memoria con `new[]` y `delete[]`.
-- Llamada a métodos de cada objeto en la horda.
+- Todos los ejercicios siguen las normas de 42 (Norminette para C++)
+- Código documentado con comentarios explicativos
+- Ejemplos de uso incluidos en cada ejercicio
+- Tests y validaciones implementadas
 
----
+## 🤝 Contribuciones
 
-### 📦 ex03 – HumanA vs HumanB y Weapon
-
-#### 🎯 Objetivo:
-- Comprender la diferencia entre componer clases con **referencias** vs **punteros**.
-- Entender cuándo usar cada uno.
-
-#### 👤 HumanA:
-- Recibe un `Weapon&` (referencia) en su constructor.
-- El arma debe existir **antes** y **no puede cambiarse ni eliminarse**.
-- No puede existir sin un arma.
-
-#### 👤 HumanB:
-- Tiene un `Weapon*` (puntero) que se puede **añadir más tarde** o dejar vacío.
-- Puede cambiar de arma en cualquier momento con `setWeapon`.
-- Puede existir sin arma.
-
-#### 🧠 Conceptos clave:
-- Una **referencia** es más segura si el objeto siempre debe tener un arma.
-- Un **puntero** es más flexible, pero requiere comprobaciones (`nullptr`).
-- Este ejercicio demuestra **diferencias de diseño en composición de clases**.
-
-![Diagrama UML](./assets/Human.drawio.png)
-
----
-
-### 📦 ex04 – Sed is for losers
-
-#### 🎯 Objetivo:
-- Crear un programa que lea un archivo de texto y reemplace todas las ocurrencias de una palabra por otra.
-
-#### 🧠 Conceptos clave:
-- Uso de **streams en C++**: `ifstream`, `ofstream`.
-- Manipulación de **strings** con `find`, `replace`, `substr`.
-- Crear un nuevo archivo de salida con el contenido modificado.
-
-#### ✔️ Buenas prácticas:
-- Comprobar que el archivo original se abrió correctamente.
-- Validar que los argumentos no estén vacíos.
-- Asegurarse de no entrar en bucles infinitos al reemplazar.
-
-![Diagrama UML](./assets/iostreamwatermark.drawio.png)
-
----
-
-### 📦 ex05 – Harl complains
-![Diagrama UML](./assets/harl1.drawio.png)
-#### 🎯 Objetivo:
-- Crear una clase `Harl` que tenga diferentes niveles de queja (`DEBUG`, `INFO`, `WARNING`, `ERROR`) y ejecute una función distinta para cada nivel.
-
-#### 🧠 Conceptos clave:
-- Uso de funciones miembro privadas que representan cada nivel.
-- Implementar un método público `complain(string level)` que actúe como **dispatcher**.
-- Uso de arrays de punteros a funciones miembro.
-
-#### ✔️ Buenas prácticas:
-- Mantener limpio el código evitando múltiples `if-else`.
-- Usar `typedef` o `using` para punteros a funciones para mejor legibilidad.
-
----
-
-### 📦 ex06 – Harl filter (opcional)
-
----
-
-## 📦 cpp02 – Módulo avanzado 2
-
-### 📦 ex00 – Clase Fixed
-
-#### 🎯 Objetivo:
-- Practicar el uso de clases en C++ con atributos privados y públicos.
-- Implementar constructores (por defecto, copia), destructor, operador de asignación y métodos miembro.
-- Entender conceptos de encapsulación y manejo de datos privados.
-
-#### 🧠 Conceptos clave:
-- Declaración e implementación de constructores y destructor.
-- Sobrecarga del operador de asignación (`operator=`).
-- Métodos getters y setters para acceder a datos privados.
-- Uso de variables miembro privadas para mantener estado interno.
-![Diagrama UML](./assets/Fixed.drawio.png)
----
-
-### 📦 ex01 – Implementación de operadores y métodos adicionales
-
-#### 🎯 Objetivo:
-- Completar la clase `Fixed` con operadores y funciones para manipular datos.
-- Implementar métodos como `toFloat()`, `toInt()`, y sobrecargar operadores de comparación y aritméticos.
-
-#### 🧠 Conceptos clave:
-- Sobrecarga de operadores en C++.
-- Conversión entre tipos (`float`, `int`) y la clase propia.
-- Mejorar la interfaz de la clase para un uso más intuitivo.
-![Diagrama UML](./assets/fixedex01.drawio.png)
----
-
-### 📦 ex02 – Operadores de incremento/decremento y funciones estáticas
-
-#### 🎯 Objetivo:
-- Implementar operadores de incremento y decremento en la clase `Fixed`.
-- Añadir funciones estáticas como `min()` y `max()` para comparar objetos.
-
-#### 🧠 Conceptos clave:
-- Operadores sobrecargados para pre y post incremento/decremento.
-- Funciones estáticas que actúan sobre objetos sin necesidad de instancia.
-- Uso correcto de referencias y constantes para eficiencia y seguridad.
-
----
-
-### 📦 ex03 – Pruebas y uso de la clase Fixed
-
-#### 🎯 Objetivo:
-- Crear programas de prueba para validar todas las funcionalidades implementadas en la clase `Fixed`.
-- Comprender la importancia de las pruebas unitarias para asegurar la calidad del código.
-
-#### 🧠 Conceptos clave:
-- Escritura de programas que crean objetos, usan operadores y métodos.
-- Observación y comparación de resultados esperados y reales.
-- Corrección de errores y mejora iterativa del código.
-
+Este es un proyecto personal de aprendizaje. Si encuentras errores o tienes sugerencias, ¡no dudes en contactarme!
 
 ---
 
 > `Made with 💙 at 42BCN`  
-> `© Ana Medina – 42 Barcelona`
+> `© Ana Medina – 42 Barcelona` 
+
 
 
 
