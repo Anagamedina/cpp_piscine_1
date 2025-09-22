@@ -163,7 +163,7 @@ flowchart LR
 
 ## 📝 Notas de Desarrollo
 
-- Todos los ejercicios siguen las normas de 42 (Norminette para C++)
+- Todos los ejercicios siguen las normas de 42
 - Código documentado con comentarios explicativos
 - Ejemplos de uso incluidos en cada ejercicio
 - Tests y validaciones implementadas
